@@ -1,9 +1,10 @@
 ---
-weight: 5
+bookCollapseSection: true
+weight: 3
 draft: false
 ---
 
-# Quadrille immutable methods
+# Immutable methods
 
 The `quadrille` immutable methods are the following:
 
