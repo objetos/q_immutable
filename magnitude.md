@@ -12,8 +12,8 @@ Returns the number of non-empty cells of a given quadrille row.
 # Syntax
 
 > `magnitude(row)`
-> 
-> # Parameters
+ 
+# Parameters
 
 | param    | description                                                                     |
 |----------|---------------------------------------------------------------------------------|
