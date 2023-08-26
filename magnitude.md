@@ -16,14 +16,14 @@ let quadrille;
 
 function setup() {
   createCanvas(8 * Quadrille.CELL_LENGTH, 8 * Quadrille.CELL_LENGTH);
-  quadrille = createQuadrille(int(random(1, 9)), int(random(1, 9)),
-                              int(random(5, 30)), '🐍');
+  quadrille = createQuadrille(int(random(3, 9)), int(random(3, 9)));
+  quadrille.rand(int(quadrille.size * 0.6), '🐍');
 }
 
 function draw() {
   background('#6495ED');
   drawQuadrille(quadrille);
-  text(`magnitude(${quadrille.mouseRow}) ` + 
+  text(`magnitude(${quadrille.mouseRow}): ` + 
         quadrille.magnitude(quadrille.mouseRow), 20, 20);
 }
 {{< /p5-global-iframe >}}
@@ -35,14 +35,14 @@ let quadrille;
 
 function setup() {
   createCanvas(8 * Quadrille.CELL_LENGTH, 8 * Quadrille.CELL_LENGTH);
-  quadrille = createQuadrille(int(random(1, 9)), int(random(1, 9)),
-                              int(random(5, 30)), '🐍');
+  quadrille = createQuadrille(int(random(3, 9)), int(random(3, 9)));
+  quadrille.rand(int(quadrille.size * 0.6), '🐍');
 }
 
 function draw() {
   background('#6495ED');
   drawQuadrille(quadrille);
-  text(`magnitude(${quadrille.mouseRow}) ` + 
+  text(`magnitude(${quadrille.mouseRow}): ` + 
         quadrille.magnitude(quadrille.mouseRow), 20, 20);
 }
 ```
