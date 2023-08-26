@@ -9,6 +9,8 @@ Returns `true` if the cell found at `(row, col)` is an [image](https://p5js.org/
 
 # Example
 
+The `isImage()` method is exemplified in [read(row, col)]({{< ref "read#example" >}}).
+
 # Syntax
 
 > `isImage(row, col)`

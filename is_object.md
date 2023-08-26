@@ -7,8 +7,6 @@ draft: false
 
 Returns `true` if the cell found at `(row, col)` is an object and `false` otherwise.
 
-# Example
-
 # Syntax
 
 > `isObject(row, col)`

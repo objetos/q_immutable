@@ -9,6 +9,8 @@ Returns `true` if the cell found at `(row, col)` is empty and `false` otherwise.
 
 # Example
 
+The `isEmpty()` method is exemplified in [visitQuadrille(quadrille, fx, cells)]({{< ref "visit_quadrille#visitquadrillequadrille-fx-cells" >}}).
+
 # Syntax
 
 > `isEmpty(row, col)`

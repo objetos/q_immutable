@@ -7,7 +7,11 @@ draft: false
 
 Returns the quadrille row to which the screen space `pixelY` coordinate belong.
 
-# Example
+{{< hint warning >}}
+**Observations**  
+1. `screenRow()` returns a value not constrain to lie in [0..[height]({{< ref "height" >}})].
+2. If the quadrille is currently being drawn use the [mouseRow]({{< ref "mouse_row" >}}) property instead.
+{{< /hint >}}
 
 # Syntax
 

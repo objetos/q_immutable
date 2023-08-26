@@ -7,8 +7,6 @@ draft: false
 
 Returns `true` if the cell found at `(row, col)` is a string and `false` otherwise.
 
-# Example
-
 # Syntax
 
 > `isString(row, col)`

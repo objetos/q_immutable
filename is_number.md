@@ -7,8 +7,6 @@ draft: false
 
 Returns `true` if the cell found at `(row, col)` has a number and `false` otherwise.
 
-# Example
-
 # Syntax
 
 > `isNumber(row, col)`

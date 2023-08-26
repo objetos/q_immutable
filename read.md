@@ -29,10 +29,12 @@ function setup() {
 function draw() {
   background('blue');
   drawQuadrille(quadrille);
-  const cell = quadrille.read(quadrille.mouseRow, quadrille.mouseCol);
-  const x = quadrille.mouseCol * Quadrille.CELL_LENGTH + 5;
-  const y = quadrille.mouseRow * Quadrille.CELL_LENGTH + 15;
-  text(cell === null ? 'null' : cell instanceof p5.Image ? 
+  const row = quadrille.mouseRow;
+  const col = quadrille.mouseCol;
+  const cell = quadrille.read(row, col);
+  const x = col * Quadrille.CELL_LENGTH + 5;
+  const y = row * Quadrille.CELL_LENGTH + 15;
+  text(cell === null ? 'null' : quadrille.isImage(row, col) ? 
                                 'abraham' : cell, x, y);
 }
 {{< /p5-global-iframe >}}
@@ -57,10 +59,12 @@ function setup() {
 function draw() {
   background('blue');
   drawQuadrille(quadrille);
-  const cell = quadrille.read(quadrille.mouseRow, quadrille.mouseCol);
-  const x = quadrille.mouseCol * Quadrille.CELL_LENGTH + 5;
-  const y = quadrille.mouseRow * Quadrille.CELL_LENGTH + 15;
-  text(cell === null ? 'null' : cell instanceof p5.Image ? 
+  const row = quadrille.mouseRow;
+  const col = quadrille.mouseCol;
+  const cell = quadrille.read(row, col);
+  const x = col * Quadrille.CELL_LENGTH + 5;
+  const y = row * Quadrille.CELL_LENGTH + 15;
+  text(cell === null ? 'null' : quadrille.isImage(row, col) ? 
                                 'abraham' : cell, x, y);
 }
 ```
