@@ -19,5 +19,5 @@ The `isEmpty()` method is exemplified in [visitQuadrille(quadrille, fx, cells)](
 
 | param    | description                                                                     |
 |----------|---------------------------------------------------------------------------------|
-| row      | Number: col number of the cell to be read [\[0..height\]]({{< ref "height" >}}) |
-| col      | Number: row number of the cell to be read [\[0..width\]]({{< ref "width" >}})   |
+| row      | Number: row number of the cell to be read [\[0..height\]]({{< ref "height" >}}) |
+| col      | Number: col number of the cell to be read [\[0..width\]]({{< ref "width" >}})   |
