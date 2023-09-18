@@ -24,9 +24,7 @@ function setup() {
   olive = color('olive');
   fuchsia = color('fuchsia');
   quadrille = createQuadrille(10, 10, 25, lime);
-  quadrille.rand(50, olive);
-  quadrille.rand(75, yellow);
-  quadrille.fill(fuchsia);
+  quadrille.rand(20, olive).rand(30, yellow).fill(fuchsia);
   ring = quadrille.ring(quadrille.mouseRow, quadrille.mouseCol, dimension);
   hint = createQuadrille(dimension * 2 + 1, dimension * 2 + 1);
 }
@@ -68,9 +66,7 @@ function setup() {
   olive = color('olive');
   fuchsia = color('fuchsia');
   quadrille = createQuadrille(10, 10, 25, lime);
-  quadrille.rand(50, olive);
-  quadrille.rand(75, yellow);
-  quadrille.fill(fuchsia);
+  quadrille.rand(20, olive).rand(30, yellow).fill(fuchsia);
   ring = quadrille.ring(quadrille.mouseRow, quadrille.mouseCol, dimension);
   hint = createQuadrille(dimension * 2 + 1, dimension * 2 + 1);
 }
