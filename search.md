@@ -10,7 +10,7 @@ Searches for `pattern` within this quadrille and returns an array of `{row, col}
 # Example
 
 (mouse click to edit pattern and quadrille; left / right arrow keys to move to next found hit)\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="625" height="470" >}}
+{{< p5-global-iframe lib1="/p5.quadrille.js/docs/libs/p5.quadrille.js" width="625" height="470" >}}
 'use strict';
 const COLS = 20, ROWS = 14;
 let grid, pattern, board, hint;
