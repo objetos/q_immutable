@@ -5,7 +5,39 @@ draft: false
 
 # search()
 
-Searches for `pattern` within this quadrille and returns an array of `{row, col}` matches. The array length may be 0 if no matches are found.
+Searches for `pattern` within this quadrille and returns an array of `{row, col}` matches. The array length may be 0 if no matches are found. In `strict` mode (i.e., `strict = true`), for a `pattern` to be successfully found within a `quadrille`, the values inside the `pattern` must be identical instances to those in the `quadrille`. Conversely, in non-`strict` mode (i.e., `strict = false`), only the presence of filled cells is required, without regard for their contents.
+
+For instance, here:
+```js
+let value;
+let quadrille, pattern;
+
+function setup() {
+  value = createColor('blue'); // 'blue' is created once and stored in 'value'
+  quadrille = createQuadrille([125, value, 'hi']); 
+  pattern = createQuadrille([value, 'hi']);
+  // quadrille and pattern share the same 'blue' instance stored in 'value'
+  // quadrille.read(0, 1) === pattern.read(0, 0) // is true
+  quadrille.search(pattern, true); // finds it
+  // quadrille.search(pattern, false); // would find it as well
+}
+```
+both `quadrille` and `pattern` are using the same instance of the color `'blue'` stored in the variable `value`. Therefore, when comparing the values in `quadrille` and `pattern`, they match in memory reference.
+
+Whereas here:
+```js
+let quadrille, pattern;
+
+function setup() {
+  quadrille = createQuadrille([125, createColor('blue'), 'hi']);
+  pattern = createQuadrille([createColor('blue'), 'hi']);
+  // quadrille and pattern have their own separate instances of 'blue'
+  // quadrille.read(0, 1) === pattern.read(0, 0) // is false
+  quadrille.search(pattern, true); // doesn't find
+  // quadrille.search(pattern, false); // would find it
+}
+```
+`quadrille` and `pattern` are using different instances of the color `'blue'`, created separately by two calls to `createColor('blue')`. Even though both instances represent the color `'blue'`, they are distinct objects in memory. Therefore, when comparing the values in `quadrille` and `pattern`, they don't match in memory reference.
 
 # Example
 
@@ -194,4 +226,4 @@ function update() {
 | parameter | description                                                                                                      |
 |-----------|------------------------------------------------------------------------------------------------------------------|
 | pattern   | Quadrille: pattern to be searched                                                                                |
-| strict    | Boolean: If `false` (default), searches only for coincidences; if `true`, searches for both coincides and values |
+| strict    | Boolean: If `false` (default), searches only the presence of filled cells; if `true`, searches for identical value instances |
