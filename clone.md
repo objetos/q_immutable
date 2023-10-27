@@ -10,7 +10,7 @@ Returns a [shallow copy](https://en.wikipedia.org/wiki/Object_copying#Shallow_co
 # Example
 
 (click on canvas and / or press any key)\
-{{< p5-global-iframe lib1="/p5.quadrille.js/docs/libs/p5.quadrille.js" width="675" height="325" >}}
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="675" height="325" >}}
 `use strict`;
 Quadrille.CELL_LENGTH = 50;
 let quadrille, clone;

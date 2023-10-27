@@ -42,7 +42,7 @@ function setup() {
 # Example
 
 (mouse click to edit pattern and quadrille; left / right arrow keys to move to next found hit)\
-{{< p5-global-iframe lib1="/p5.quadrille.js/docs/libs/p5.quadrille.js" width="625" height="470" >}}
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="625" height="470" >}}
 'use strict';
 const COLS = 20, ROWS = 14;
 let grid, pattern, board, hint;
@@ -125,7 +125,7 @@ function reset() {
 function update() {
   hits = board.search(pattern, strict.checked());
   hint = pattern.clone();
-  hint = Quadrille.NEG(hint, color(red(back), green(back), blue(back), 210));
+  hint = Quadrille.neg(hint, color(red(back), green(back), blue(back), 210));
 }
 {{< /p5-global-iframe >}}
 
@@ -212,7 +212,7 @@ function reset() {
 function update() {
   hits = board.search(pattern, strict.checked());
   hint = pattern.clone();
-  hint = Quadrille.NEG(hint, color(red(back), green(back), blue(back), 210));
+  hint = Quadrille.neg(hint, color(red(back), green(back), blue(back), 210));
 }
 ```
 {{< /details >}}

@@ -9,7 +9,7 @@ Returns the contents of the quadrille cell at `(row, col)`. Returns `undefined` 
 
 # Example
 
-{{< p5-global-iframe lib1="/p5.quadrille.js/docs/libs/p5.quadrille.js" width="225" height="325" >}}
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="225" height="325" >}}
 `use strict`;
 let quadrille;
 let al;
@@ -21,13 +21,13 @@ function preload() {
 function setup() {
   createCanvas(200, 300);
   quadrille = createQuadrille([['hi', 100],
-                               [null, color('red')],
+                               [null, color('magenta')],
                                [al]]);
   fill('yellow');
 }
 
 function draw() {
-  background('blue');
+  background('green');
   drawQuadrille(quadrille);
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
@@ -45,19 +45,19 @@ let quadrille;
 let al;
 
 function preload() {
-  al = loadImage('abraham_lincoln.jpg');
+  al = loadImage('../abraham_lincoln.jpg');
 }
 
 function setup() {
   createCanvas(200, 300);
   quadrille = createQuadrille([['hi', 100],
-                               [null, color('red')],
+                               [null, color('magenta')],
                                [al]]);
   fill('yellow');
 }
 
 function draw() {
-  background('blue');
+  background('green');
   drawQuadrille(quadrille);
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
