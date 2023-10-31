@@ -63,8 +63,8 @@ function setup() {
     lime: limeColor,
     slateblue: slateblueColor
   };
-  Quadrille.CELL_LENGTH = 30;
-  createCanvas(COLS * Quadrille.CELL_LENGTH, ROWS * Quadrille.CELL_LENGTH);
+  Quadrille.cellLength = 30;
+  createCanvas(COLS * Quadrille.cellLength, ROWS * Quadrille.cellLength);
   grid = createQuadrille(COLS, ROWS, COLS * ROWS, back);
   mode = createSelect();
   mode.option('tomato');
@@ -150,8 +150,8 @@ function setup() {
     lime: limeColor,
     slateblue: slateblueColor
   };
-  Quadrille.CELL_LENGTH = 30;
-  createCanvas(COLS * Quadrille.CELL_LENGTH, ROWS * Quadrille.CELL_LENGTH);
+  Quadrille.cellLength = 30;
+  createCanvas(COLS * Quadrille.cellLength, ROWS * Quadrille.cellLength);
   grid = createQuadrille(COLS, ROWS, COLS * ROWS, back);
   mode = createSelect();
   mode.option('tomato');

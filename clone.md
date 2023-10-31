@@ -12,7 +12,7 @@ Returns a [shallow copy](https://en.wikipedia.org/wiki/Object_copying#Shallow_co
 (click on canvas and / or press any key)\
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="675" height="325" >}}
 `use strict`;
-Quadrille.CELL_LENGTH = 50;
+Quadrille.cellLength = 50;
 let quadrille, clone;
 let color1, color2;
 
@@ -45,7 +45,7 @@ function keyPressed() {
 
 {{< details title="code" open=false >}}
 ```js
-Quadrille.CELL_LENGTH = 50;
+Quadrille.cellLength = 50;
 let quadrille, clone;
 let color1, color2;
 

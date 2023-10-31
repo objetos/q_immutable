@@ -12,7 +12,7 @@ Returns the ring of neighbor cells centered at `(row, col)` as a new quadrille.
 (click on canvas, move mouse and press keys **1** to **4**)\
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="225" >}}
 `use strict`;
-Quadrille.CELL_LENGTH = 20;
+Quadrille.cellLength = 20;
 let quadrille, ring, hint;
 let dimension = 1;
 let lime, olive, yellow, fuchsia;
@@ -54,7 +54,7 @@ function keyPressed() {
 
 {{< details title="code" open=false >}}
 ```js
-Quadrille.CELL_LENGTH = 20;
+Quadrille.cellLength = 20;
 let quadrille, ring, hint;
 let dimension = 1;
 let lime, olive, yellow, fuchsia;

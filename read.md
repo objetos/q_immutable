@@ -32,8 +32,8 @@ function draw() {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
   const cell = quadrille.read(row, col);
-  const x = col * Quadrille.CELL_LENGTH + 5;
-  const y = row * Quadrille.CELL_LENGTH + 15;
+  const x = col * Quadrille.cellLength + 5;
+  const y = row * Quadrille.cellLength + 15;
   text(cell === null ? 'null' : quadrille.isImage(row, col) ? 
                                 'abraham' : cell, x, y);
 }
@@ -62,8 +62,8 @@ function draw() {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
   const cell = quadrille.read(row, col);
-  const x = col * Quadrille.CELL_LENGTH + 5;
-  const y = row * Quadrille.CELL_LENGTH + 15;
+  const x = col * Quadrille.cellLength + 5;
+  const y = row * Quadrille.cellLength + 15;
   text(cell === null ? 'null' : quadrille.isImage(row, col) ? 
                                 'abraham' : cell, x, y);
 }

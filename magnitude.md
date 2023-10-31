@@ -11,11 +11,11 @@ Returns the number of non-empty cells of a given quadrille row.
 
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="425" >}}
 `use strict`;
-Quadrille.CELL_LENGTH = 50;
+Quadrille.cellLength = 50;
 let quadrille;
 
 function setup() {
-  createCanvas(8 * Quadrille.CELL_LENGTH, 8 * Quadrille.CELL_LENGTH);
+  createCanvas(8 * Quadrille.cellLength, 8 * Quadrille.cellLength);
   quadrille = createQuadrille(int(random(3, 9)), int(random(3, 9)));
   quadrille.rand(int(quadrille.size * 0.6), '🐍');
 }
@@ -30,11 +30,11 @@ function draw() {
 
 {{< details title="code" open=false >}}
 ```js
-Quadrille.CELL_LENGTH = 50;
+Quadrille.cellLength = 50;
 let quadrille;
 
 function setup() {
-  createCanvas(8 * Quadrille.CELL_LENGTH, 8 * Quadrille.CELL_LENGTH);
+  createCanvas(8 * Quadrille.cellLength, 8 * Quadrille.cellLength);
   quadrille = createQuadrille(int(random(3, 9)), int(random(3, 9)));
   quadrille.rand(int(quadrille.size * 0.6), '🐍');
 }

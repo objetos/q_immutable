@@ -11,7 +11,7 @@ Returns a row as a new quadrille.
 
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="325" height="385" >}}
 `use strict`;
-Quadrille.CELL_LENGTH = 30;
+Quadrille.cellLength = 30;
 let quadrille, row, hint;
 let lime, olive, yellow, fuchsia;
 
@@ -42,7 +42,7 @@ function mouseMoved() {
 
 {{< details title="code" open=false >}}
 ```js
-Quadrille.CELL_LENGTH = 30;
+Quadrille.cellLength = 30;
 let quadrille, row, hint;
 let lime, olive, yellow, fuchsia;
 
