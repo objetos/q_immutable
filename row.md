@@ -9,7 +9,7 @@ Returns a row as a new quadrille.
 
 # Example
 
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="325" height="385" >}}
+{{< p5-global-iframe quadrille="true" width="325" height="385" >}}
 `use strict`;
 Quadrille.cellLength = 30;
 let quadrille, row, hint;
