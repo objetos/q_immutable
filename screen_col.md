@@ -7,11 +7,11 @@ draft: false
 
 Returns the quadrille col to which the screen space `pixelX` coordinate belong.
 
-{{< hint warning >}}
+{{< callout type="warning" >}}
 **Observations**  
 1. `screenCol()` returns a value not constrain to lie in [0..[width]({{< ref "width" >}})].
 2. If the quadrille is currently being drawn use the [mouseCol]({{< ref "mouse_col" >}}) property instead.
-{{< /hint >}}
+{{< /callout >}}
 
 # Syntax
 
