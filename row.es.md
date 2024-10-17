@@ -5,9 +5,9 @@ draft: false
 
 # `row()`
 
-Returns a row as a new quadrille.
+Devuelve una fila como una nueva cuadrícula.
 
-# Example
+# Ejemplo
 
 {{< p5-global-iframe quadrille="true" width="325" height="385" >}}
 `use strict`;
@@ -72,12 +72,12 @@ function mouseMoved() {
 ```
 {{< /details >}}
 
-# Syntax
+# Sintaxis
 
 > `row(row)`
- 
-# Parameters
 
-| param    | description                                                                     |
-|----------|---------------------------------------------------------------------------------|
-| row      | Number: col number of the cell to be read [\[0..height\]]({{< ref "height" >}}) |
+# Parámetros
+
+| parámetro | descripción                                                            |
+|-----------|------------------------------------------------------------------------|
+| row       | Número: número de la fila a leer [\[0..height\]]({{< ref "height" >}}) |
