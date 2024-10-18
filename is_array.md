@@ -1,9 +1,8 @@
 ---
 weight: 13
 draft: false
+title: "isArray(row, col)"
 ---
-
-# `isArray()`
 
 Returns `true` if the cell found at `(row, col)` is an array and `false` otherwise.
 

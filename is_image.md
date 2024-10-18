@@ -1,9 +1,8 @@
 ---
 weight: 12
 draft: false
+title: "isImage(row, col)"
 ---
-
-# `isImage()`
 
 Returns `true` if the cell found at `(row, col)` is an [image](https://p5js.org/reference/#/p5/image) or [graphics](https://p5js.org/reference/#/p5.Graphics) and `false` otherwise.
 

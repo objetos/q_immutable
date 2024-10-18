@@ -1,9 +1,8 @@
 ---
 weight: 3
 draft: false
+title: "clone()"
 ---
-
-# `clone()`
 
 Returns a [shallow copy](https://en.wikipedia.org/wiki/Object_copying#Shallow_copy) of the quadrille.
 

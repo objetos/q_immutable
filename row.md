@@ -1,7 +1,7 @@
 ---
 weight: 4
 draft: false
-title: "row()"
+title: "row(row)"
 ---
 
 Returns a row as a new quadrille.

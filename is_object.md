@@ -1,9 +1,8 @@
 ---
 weight: 14
 draft: false
+title: "isObject(row, col)"
 ---
-
-# `isObject()`
 
 Returns `true` if the cell found at `(row, col)` is an object and `false` otherwise.
 

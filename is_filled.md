@@ -1,9 +1,8 @@
 ---
 weight: 8
 draft: false
+title: "isFilled(row, col)"
 ---
-
-# `isFilled()`
 
 Returns `true` if the cell found at `(row, col)` is filled and `false` otherwise. Cells not defined as `null` are considered filled.
 

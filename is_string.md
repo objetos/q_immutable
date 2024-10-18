@@ -1,9 +1,8 @@
 ---
 weight: 11
 draft: false
+title: "isString(row, col)"
 ---
-
-# `isString()`
 
 Returns `true` if the cell found at `(row, col)` is a string and `false` otherwise.
 

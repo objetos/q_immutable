@@ -1,6 +1,7 @@
 ---
 weight: 6
 draft: false
+title: "search(pattern, strict)"
 ---
 
 # search()
@@ -219,7 +220,7 @@ function update() {
 
 # Syntax
 
-> `search(pattern, [strict])`
+> `search(pattern, [strict = false])`
 
 # Parameters
 

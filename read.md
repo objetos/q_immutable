@@ -1,9 +1,8 @@
 ---
 weight: 1
 draft: false
+title: "read(row, col)"
 ---
-
-# `read()`
 
 Returns the contents of the quadrille cell at `(row, col)`. Returns `undefined` if the cell doesn't exist.
 

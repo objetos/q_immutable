@@ -1,9 +1,8 @@
 ---
 weight: 10
 draft: false
+title: "isNumber(row, col)"
 ---
-
-# `isNumber()`
 
 Returns `true` if the cell found at `(row, col)` has a number and `false` otherwise.
 

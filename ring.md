@@ -1,9 +1,8 @@
 ---
 weight: 5
 draft: false
+title: "ring(row, col, dimension)"
 ---
-
-# `ring()`
 
 Returns the ring of neighbor cells centered at `(row, col)` as a new quadrille.
 

@@ -1,9 +1,8 @@
 ---
 weight: 2
 draft: false
+title: "magnitude(row)"
 ---
-
-# `magnitude()`
 
 Returns the number of non-empty cells of a given quadrille row.
 

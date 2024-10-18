@@ -1,9 +1,8 @@
 ---
 weight: 7
 draft: false
+title: "isEmpty(row, col)"
 ---
-
-# `isEmpty()`
 
 Returns `true` if the cell found at `(row, col)` is empty and `false` otherwise. Only cells defined as `null` are considered empty.
 

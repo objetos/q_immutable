@@ -1,9 +1,8 @@
 ---
 weight: 16
 draft: false
+title: "screenCol(pixelX, x, cellLength)"
 ---
-
-# `screenCol()`
 
 Returns the quadrille col to which the screen space `pixelX` coordinate belong.
 
@@ -15,9 +14,7 @@ Returns the quadrille col to which the screen space `pixelX` coordinate belong.
 
 # Syntax
 
-> `screenCol(pixelX)`
-
-> `screenCol(pixelX, x, cellLength)`
+> `screenCol(pixelX, [x], [cellLength])`
 
 # Parameters
 

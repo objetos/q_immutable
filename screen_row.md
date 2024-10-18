@@ -1,9 +1,8 @@
 ---
 weight: 15
 draft: false
+title: "screenRow(pixelY, y, cellLength)"
 ---
-
-# `screenRow()`
 
 Returns the quadrille row to which the screen space `pixelY` coordinate belong.
 
@@ -15,9 +14,7 @@ Returns the quadrille row to which the screen space `pixelY` coordinate belong.
 
 # Syntax
 
-> `screenRow(pixelY)`
-
-> `screenRow(pixelY, y, cellLength)`
+> `screenRow(pixelY, [y], [cellLength])`
 
 # Parameters
 
