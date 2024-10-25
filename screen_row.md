@@ -1,6 +1,5 @@
 ---
 weight: 15
-draft: false
 title: "screenRow(pixelY, y, cellLength)"
 ---
 

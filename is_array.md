@@ -1,6 +1,5 @@
 ---
 weight: 13
-draft: false
 title: "isArray(row, col)"
 ---
 

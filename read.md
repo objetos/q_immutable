@@ -1,6 +1,5 @@
 ---
 weight: 1
-draft: false
 title: "read(row, col)"
 ---
 

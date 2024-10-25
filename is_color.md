@@ -1,6 +1,5 @@
 ---
 weight: 9
-draft: false
 title: "isColor(row, col)"
 ---
 

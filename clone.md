@@ -1,6 +1,5 @@
 ---
 weight: 3
-draft: false
 title: "clone()"
 ---
 

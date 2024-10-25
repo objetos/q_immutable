@@ -1,6 +1,5 @@
 ---
 weight: 4
-draft: false
 title: "row(row)"
 ---
 

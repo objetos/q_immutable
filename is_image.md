@@ -1,6 +1,5 @@
 ---
 weight: 12
-draft: false
 title: "isImage(row, col)"
 ---
 

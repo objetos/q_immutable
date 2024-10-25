@@ -1,6 +1,5 @@
 ---
 weight: 8
-draft: false
 title: "isFilled(row, col)"
 ---
 

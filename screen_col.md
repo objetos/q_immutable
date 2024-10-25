@@ -1,6 +1,5 @@
 ---
 weight: 16
-draft: false
 title: "screenCol(pixelX, x, cellLength)"
 ---
 

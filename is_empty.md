@@ -1,6 +1,5 @@
 ---
 weight: 7
-draft: false
 title: "isEmpty(row, col)"
 ---
 

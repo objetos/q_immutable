@@ -1,6 +1,5 @@
 ---
 weight: 2
-draft: false
 title: "magnitude(row)"
 ---
 
