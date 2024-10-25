@@ -6,7 +6,7 @@ title: "read(row, col)"
 
 Returns the contents of the quadrille cell at `(row, col)`. Returns `undefined` if the cell doesn't exist.
 
-# Example
+## Example
 
 {{< p5-global-iframe quadrille="true" width="225" height="325" >}}
 `use strict`;
@@ -69,11 +69,11 @@ function draw() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `read(row, col)`
 
-# Parameters
+## Parameters
 
 | param    | description                                                                     |
 |----------|---------------------------------------------------------------------------------|

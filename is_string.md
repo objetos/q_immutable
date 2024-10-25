@@ -6,11 +6,11 @@ title: "isString(row, col)"
 
 Returns `true` if the cell found at `(row, col)` is a string and `false` otherwise.
 
-# Syntax
+## Syntax
 
 > `isString(row, col)`
 
-# Parameters
+## Parameters
 
 | param    | description                                                                     |
 |----------|---------------------------------------------------------------------------------|

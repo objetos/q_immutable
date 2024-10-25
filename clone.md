@@ -6,7 +6,7 @@ title: "clone()"
 
 Returns a [shallow copy](https://en.wikipedia.org/wiki/Object_copying#Shallow_copy) of the quadrille.
 
-# Example
+## Example
 
 (click on canvas and / or press any key)\
 {{< p5-global-iframe quadrille="true" width="675" height="325" >}}
@@ -76,6 +76,6 @@ function keyPressed() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `clone()`

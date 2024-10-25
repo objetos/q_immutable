@@ -4,8 +4,6 @@ draft: false
 title: "search(pattern, strict)"
 ---
 
-# search()
-
 Searches for `pattern` within this quadrille and returns an array of `{row, col}` matches. The array length may be 0 if no matches are found. In `strict` mode (i.e., `strict = true`), for a `pattern` to be successfully found within a `quadrille`, the values inside the `pattern` must be identical instances to those in the `quadrille`. Conversely, in non-`strict` mode (i.e., `strict = false`), only the presence of filled cells is required, without regard for their contents.
 
 For instance, here:
@@ -40,7 +38,7 @@ function setup() {
 ```
 `quadrille` and `pattern` are using different instances of the color `'blue'`, created separately by two calls to `createColor('blue')`. Even though both instances represent the color `'blue'`, they are distinct objects in memory. Therefore, when comparing the values in `quadrille` and `pattern`, they don't match in memory reference.
 
-# Example
+## Example
 
 (mouse click to edit pattern and quadrille; left / right arrow keys to move to next found hit)\
 {{< p5-global-iframe quadrille="true" width="625" height="470" >}}
@@ -218,11 +216,11 @@ function update() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `search(pattern, [strict = false])`
 
-# Parameters
+## Parameters
 
 | parameter | description                                                                                                      |
 |-----------|------------------------------------------------------------------------------------------------------------------|

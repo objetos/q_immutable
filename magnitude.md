@@ -6,7 +6,7 @@ title: "magnitude(row)"
 
 Returns the number of non-empty cells of a given quadrille row.
 
-# Example
+## Example
 
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
 `use strict`;
@@ -47,11 +47,11 @@ function draw() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `magnitude(row)`
  
-# Parameters
+## Parameters
 
 | param    | description                                                                     |
 |----------|---------------------------------------------------------------------------------|

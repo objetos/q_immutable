@@ -6,11 +6,11 @@ title: "isNumber(row, col)"
 
 Returns `true` if the cell found at `(row, col)` has a number and `false` otherwise.
 
-# Syntax
+## Syntax
 
 > `isNumber(row, col)`
 
-# Parameters
+## Parameters
 
 | param    | description                                                                     |
 |----------|---------------------------------------------------------------------------------|

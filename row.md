@@ -6,7 +6,7 @@ title: "row(row)"
 
 Returns a row as a new quadrille.
 
-# Example
+## Example
 
 {{< p5-global-iframe quadrille="true" width="325" height="385" >}}
 `use strict`;
@@ -71,11 +71,11 @@ function mouseMoved() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `row(row)`
  
-# Parameters
+## Parameters
 
 | param    | description                                                                     |
 |----------|---------------------------------------------------------------------------------|

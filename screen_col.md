@@ -12,11 +12,11 @@ Returns the quadrille col to which the screen space `pixelX` coordinate belong.
 2. If the quadrille is currently being drawn use the [mouseCol]({{< ref "mouse_col" >}}) property instead.
 {{< /callout >}}
 
-# Syntax
+## Syntax
 
 > `screenCol(pixelX, [x], [cellLength])`
 
-# Parameters
+## Parameters
 
 | parameter  | description                                                                                              |
 |------------|----------------------------------------------------------------------------------------------------------|

@@ -6,11 +6,11 @@ title: "isObject(row, col)"
 
 Returns `true` if the cell found at `(row, col)` is an object and `false` otherwise.
 
-# Syntax
+## Syntax
 
 > `isObject(row, col)`
 
-# Parameters
+## Parameters
 
 | param    | description                                                                     |
 |----------|---------------------------------------------------------------------------------|

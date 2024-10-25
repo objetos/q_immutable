@@ -6,15 +6,15 @@ title: "isImage(row, col)"
 
 Returns `true` if the cell found at `(row, col)` is an [image](https://p5js.org/reference/#/p5/image) or [graphics](https://p5js.org/reference/#/p5.Graphics) and `false` otherwise.
 
-# Example
+## Example
 
 The `isImage()` method is exemplified in [read(row, col)]({{< ref "read#example" >}}).
 
-# Syntax
+## Syntax
 
 > `isImage(row, col)`
 
-# Parameters
+## Parameters
 
 | param    | description                                                                     |
 |----------|---------------------------------------------------------------------------------|

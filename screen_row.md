@@ -12,11 +12,11 @@ Returns the quadrille row to which the screen space `pixelY` coordinate belong.
 2. If the quadrille is currently being drawn use the [mouseRow]({{< ref "mouse_row" >}}) property instead.
 {{< /callout >}}
 
-# Syntax
+## Syntax
 
 > `screenRow(pixelY, [y], [cellLength])`
 
-# Parameters
+## Parameters
 
 | parameter  | description                                                                                              |
 |------------|----------------------------------------------------------------------------------------------------------|

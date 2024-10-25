@@ -6,13 +6,11 @@ title: "isArray(row, col)"
 
 Returns `true` if the cell found at `(row, col)` is an array and `false` otherwise.
 
-# Example
-
-# Syntax
+## Syntax
 
 > `isArray(row, col)`
 
-# Parameters
+## Parameters
 
 | param    | description                                                                     |
 |----------|---------------------------------------------------------------------------------|

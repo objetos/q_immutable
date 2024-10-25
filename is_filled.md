@@ -6,11 +6,11 @@ title: "isFilled(row, col)"
 
 Returns `true` if the cell found at `(row, col)` is filled and `false` otherwise. Cells not defined as `null` are considered filled.
 
-# Syntax
+## Syntax
 
 > `isFilled(row, col)`
 
-# Parameters
+## Parameters
 
 | param    | description                                                                     |
 |----------|---------------------------------------------------------------------------------|
