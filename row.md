@@ -8,7 +8,7 @@ Returns a row as a new quadrille.
 ## Example
 
 {{< p5-global-iframe quadrille="true" width="325" height="385" >}}
-`use strict`;
+'use strict';
 Quadrille.cellLength = 30;
 let quadrille, row, hint;
 let lime, olive, yellow, fuchsia;

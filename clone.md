@@ -9,7 +9,7 @@ Returns a [shallow copy](https://en.wikipedia.org/wiki/Object_copying#Shallow_co
 
 (click on canvas and / or press any key)\
 {{< p5-global-iframe quadrille="true" width="675" height="325" >}}
-`use strict`;
+'use strict';
 Quadrille.cellLength = 50;
 let quadrille, clone;
 let color1, color2;

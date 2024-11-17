@@ -8,7 +8,7 @@ Returns the number of non-empty cells of a given quadrille row.
 ## Example
 
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
-`use strict`;
+'use strict';
 Quadrille.cellLength = 50;
 let quadrille;
 

@@ -9,7 +9,7 @@ Returns the ring of neighbor cells centered at `(row, col)` as a new quadrille.
 
 (click on canvas, move mouse and press keys **1** to **4**)\
 {{< p5-global-iframe quadrille="true" width="425" height="225" >}}
-`use strict`;
+'use strict';
 Quadrille.cellLength = 20;
 let quadrille, ring, hint;
 let dimension = 1;
