@@ -40,7 +40,7 @@ function setup() {
 
 ## Example
 
-(mouse click to edit pattern and quadrille; left / right arrow keys to move to next found hit)\
+(click cells to edit pattern and quadrille; left / right arrow keys to move to next found hit)\
 {{< p5-global-iframe quadrille="true" width="625" height="470" >}}
 'use strict';
 const COLS = 20, ROWS = 14;
@@ -215,6 +215,12 @@ function update() {
 }
 ```
 {{< /details >}}
+
+{{< callout type="info" >}}
+**Observations**\
+- The `reset` function initializes the `pattern` and `board` quadrilles with random sizes and colors. The `pattern` is smaller and random, while the `board` represents the larger search area, containing various colors. This setup is useful for generating new data sets to test the `search` functionality.  
+- The `update` function recalculates the matches (stored in the `hits` array) between the `pattern` and the `board` quadrilles. It also creates a `hint` quadrille, which visually highlights the current `pattern` match during navigation. Without `update`, the application would not reflect changes after editing or randomizing quadrilles.  
+{{< /callout >}}
 
 ## Syntax
 
