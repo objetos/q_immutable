@@ -3,7 +3,7 @@ weight: 12
 title: "isImage(row, col)"
 ---
 
-Returns `true` if the cell found at `(row, col)` is an [image](https://p5js.org/reference/#/p5/image) or [graphics](https://p5js.org/reference/#/p5.Graphics) and `false` otherwise.
+Returns `true` if the cell at `(row, col)` contains a valid image-related type such as an [image](https://p5js.org/reference/#/p5.Image), [graphics](https://p5js.org/reference/#/p5.Graphics), or [framebuffer](https://p5js.org/reference/#/p5.Framebuffer), or if it is a [video](https://p5js.org/reference/#/p5.MediaElement) element, and `false` otherwise.
 
 ## Example
 
