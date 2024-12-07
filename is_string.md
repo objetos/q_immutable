@@ -1,5 +1,5 @@
 ---
-weight: 9
+weight: 6
 title: "isString(row, col)"
 ---
 

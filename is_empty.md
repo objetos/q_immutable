@@ -1,5 +1,5 @@
 ---
-weight: 7
+weight: 4
 title: "isEmpty(row, col)"
 ---
 

@@ -1,5 +1,5 @@
 ---
-weight: 13
+weight: 11
 title: "isFunction(row, col)"
 ---
 

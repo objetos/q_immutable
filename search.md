@@ -1,5 +1,5 @@
 ---
-weight: 6
+weight: 3
 draft: false
 title: "search(pattern, strict)"
 ---

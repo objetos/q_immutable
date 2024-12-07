@@ -1,5 +1,5 @@
 ---
-weight: 8
+weight: 5
 title: "isFilled(row, col)"
 ---
 
