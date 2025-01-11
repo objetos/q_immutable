@@ -99,8 +99,8 @@ function keyPressed() {
 
 ## Parameters
 
-| param     | description                                                                     |
+| Param     | Description                                                                     |
 |-----------|---------------------------------------------------------------------------------|
-| row       | Number: col number of the cell to be read [\[0..height\]]({{< ref "height" >}}) |
-| col       | Number: row number of the cell to be read [\[0..width\]]({{< ref "width" >}})   |
-| dimension | Number: ring dimension default is 1                                             |
+| `row`     | Number: col number of the cell to be read [\[0..height\]]({{< ref "height" >}}) |
+| `col`     | Number: row number of the cell to be read [\[0..width\]]({{< ref "width" >}})   |
+| `dimension` | Number: ring dimension default is 1                                           |

@@ -17,8 +17,8 @@ Returns the quadrille row to which the screen space `pixelY` coordinate belong.
 
 ## Parameters
 
-| parameter  | description                                                                                              |
+| Param  | Description                                                                                              |
 |------------|----------------------------------------------------------------------------------------------------------|
-| pixelY     | Number: screen space y-coord                                                                             |
-| y          | Number: quadrille upper left corner y-coord. If not provided it's value is inferred from `drawQuadrille` |
-| cellLength | Number: cell length. If not provided it's value is inferred from `drawQuadrille`                         |
+| `pixelY`     | Number: screen space y-coord                                                                             |
+| `y`          | Number: quadrille upper left corner y-coord. If not provided it's value is inferred from `drawQuadrille` |
+| `cellLength` | Number: cell length. If not provided it's value is inferred from `drawQuadrille`                         |

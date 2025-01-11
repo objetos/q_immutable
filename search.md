@@ -228,7 +228,7 @@ function update() {
 
 ## Parameters
 
-| parameter | description                                                                                                      |
+| Param | Description                                                                                                      |
 |-----------|------------------------------------------------------------------------------------------------------------------|
-| pattern   | Quadrille: pattern to be searched                                                                                |
-| strict    | Boolean: If `false` (default), searches only the presence of filled cells; if `true`, searches for identical value instances |
+| `pattern` | Quadrille: pattern to be searched                                                                                |
+| `strict`  | Boolean: If `false` (default), searches only the presence of filled cells; if `true`, searches for identical value instances |

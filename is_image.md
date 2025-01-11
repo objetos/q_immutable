@@ -15,7 +15,7 @@ The `isImage()` method is exemplified in [read(row, col)]({{< ref "read#example"
 
 ## Parameters
 
-| param    | description                                                                     |
+| Param    | Description                                                                     |
 |----------|---------------------------------------------------------------------------------|
-| row      | Number: col number of the cell to be read [\[0..height\]]({{< ref "height" >}}) |
-| col      | Number: row number of the cell to be read [\[0..width\]]({{< ref "width" >}})   |
+| `row`    | Number: col number of the cell to be read [\[0..height\]]({{< ref "height" >}}) |
+| `col`    | Number: row number of the cell to be read [\[0..width\]]({{< ref "width" >}})   |
