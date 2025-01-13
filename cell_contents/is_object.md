@@ -1,13 +1,13 @@
 ---
-weight: 11
-title: "isFunction(row, col)"
+weight: 10
+title: "isObject(row, col)"
 ---
 
-Returns `true` if the cell found at `(row, col)` is a function and `false` otherwise.
+Returns `true` if the cell at `(row, col)` contains a value that qualifies as an object, excluding specific types such as [colors]({{< relref "is_color" >}}), [images]({{< relref "is_image" >}}), [arrays]({{< relref "is_array" >}}), or [functions]({{< relref "is_function" >}}), and `false` otherwise.
 
 ## Syntax
 
-> `isFunction(row, col)`
+> `isObject(row, col)`
 
 ## Parameters
 

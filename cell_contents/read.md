@@ -1,13 +1,13 @@
 ---
-weight: 12
-title: "isObject(row, col)"
+weight: 1
+title: "read(row, col)"
 ---
 
-Returns `true` if the cell at `(row, col)` contains a value that qualifies as an object, excluding specific types such as [colors]({{< relref "is_color" >}}), [images]({{< relref "is_image" >}}), [arrays]({{< relref "is_array" >}}), or [functions]({{< relref "is_function" >}}), and `false` otherwise.
+Returns the contents of the quadrille cell at `(row, col)`. Returns `undefined` if the cell doesn't exist.
 
 ## Syntax
 
-> `isObject(row, col)`
+> `read(row, col)`
 
 ## Parameters
 

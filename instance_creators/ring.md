@@ -1,5 +1,5 @@
 ---
-weight: 17
+weight: 3
 title: "ring(row, col, dimension)"
 ---
 

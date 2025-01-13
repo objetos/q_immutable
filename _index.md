@@ -5,33 +5,15 @@ draft: false
 title: Accessors  
 ---
 
-**Accessor methods** are designed to retrieve information about a `quadrille` instance or generate modified copies of it without altering the original `quadrille`. These methods are strictly **non-mutative**, ensuring the integrity of the original instance.  
+**Accessor methods** are powerful tools for extracting information or creating modified versions of a `quadrille` instance. These methods are strictly **non-mutative**, ensuring the original quadrille remains unchanged while offering detailed insights or generating derivative instances.
 
-Accessor methods are divided into two categories:  
+### **Queries**  
+[Query methods]({{< relref "queries" >}}) provide computations and insights into the quadrille's structure. These include operations such as **[search(pattern, strict)]({{< relref "search" >}})** for finding cells matching specific patterns, **[magnitude(row)]({{< relref "magnitude" >}})** to calculate the number of non-empty cells in a row, and **[screenRow(pixelY, y, cellLength)]({{< relref "screen_row" >}})** or **[screenCol(pixelX, x, cellLength)]({{< relref "screen_col" >}})** for mapping pixel positions to grid indices.  
 
-## Query Accessors  
+### **Cell Contents**  
+[Cell content accessors]({{< relref "cell_contents" >}}) focus on retrieving information about the value and type of individual cells. You can use **[read(row, col)]({{< relref "read" >}})** to access a cell's content, or methods like **[isEmpty(row, col)]({{< relref "is_empty" >}})**, **[isFilled(row, col)]({{< relref "is_filled" >}})**, **[isString(row, col)]({{< relref "is_string" >}})**, **[isNumber(row, col)]({{< relref "is_number" >}})**, **[isColor(row, col)]({{< relref "is_color" >}})**, **[isImage(row, col)]({{< relref "is_image" >}})**, **[isArray(row, col)]({{< relref "is_array" >}})**, **[isFunction(row, col)]({{< relref "is_function" >}})**, and **[isObject(row, col)]({{< relref "is_object" >}})** to determine the type of data in a specific cell.  
 
-_Query accessors_ provide insights into the current state of a `quadrille`. Use these methods to inspect cell content or check specific conditions at given positions:  
-- **[read(row, col)]({{< ref "read" >}}):** Returns the content of the cell at the specified `row` and `col`.  
-- **[magnitude(row)]({{< ref "magnitude" >}}):** Calculates the number of non-empty cells in the specified `row`.  
-- **[search(pattern, strict)]({{< ref "search" >}}):** Searches for cells that match a specific quadrille `pattern`, with an optional `strict` mode for exact matches of cell values.  
-- **[isEmpty(row, col)]({{< ref "is_empty" >}}):** Checks if the specified cell at `row` and `col` is empty.  
-- **[isFilled(row, col)]({{< ref "is_filled" >}}):** Checks if the specified cell at `row` and `col` contains non-empty content.  
-- **[isString(row, col)]({{< ref "is_string" >}}):** Determines if the specified cell at `row` and `col` contains a string.  
-- **[isNumber(row, col)]({{< ref "is_number" >}}):** Determines if the specified cell at `row` and `col` contains a number.  
-- **[isColor(row, col)]({{< ref "is_color" >}}):** Checks if the specified cell at `row` and `col` contains a color.  
-- **[isImage(row, col)]({{< ref "is_image" >}}):** Checks if the specified cell at `row` and `col` contains an image.  
-- **[isArray(row, col)]({{< ref "is_array" >}}):** Determines if the specified cell at `row` and `col` contains an array.  
-- **[isFunction(row, col)]({{< ref "is_function" >}}):** Determines if the specified cell at `row` and `col` contains a function.  
-- **[isObject(row, col)]({{< ref "is_object" >}}):** Determines if the specified cell at `row` and `col` contains an object.  
-- **[screenRow(pixelY, y, cellLength)]({{< ref "screen_row" >}}):** Computes the `row` index from a vertical pixel position. Rarely used—consider using the **[mouseRow]({{< ref "mouse_row" >}})** property instead for simplicity.  
-- **[screenCol(pixelX, x, cellLength)]({{< ref "screen_col" >}}):** Computes the `col` index from a horizontal pixel position. Rarely used—consider using the **[mouseCol]({{< ref "mouse_col" >}})** property instead for simplicity.  
+### **Instance Creators**  
+[Instance creator methods]({{< relref "instance_creators" >}}) generate new quadrille instances derived from the original. These include **[clone()]({{< relref "clone" >}})** to create a shallow copy, **[row(row)]({{< relref "row" >}})** to extract a specific row, and **[ring(row, col, dimension)]({{< relref "ring" >}})** to construct a circular subset of cells around a specified position.
 
-## Instance Accessors  
-
-_Instance accessors_ generate new `quadrille` instances derived from the original. These methods allow you to create modified versions while preserving the original quadrille’s state:  
-- **[clone()]({{< ref "clone" >}}):** Creates a [shallow copy](https://en.wikipedia.org/wiki/Object_copying#Shallow_copy) of the quadrille.  
-- **[row(row)]({{< ref "row" >}}):** Generates a new quadrille containing only the specified `row`.  
-- **[ring(row, col, dimension)]({{< ref "ring" >}}):** Produces a new quadrille representing a ring of cells around the specified `row` and `col` with the given `dimension`.  
-
-These accessor methods provide a robust and non-intrusive way to inspect, analyze, and transform quadrilles while maintaining the original instance’s integrity.  
+Through these categories, accessor methods provide a comprehensive way to analyze and derive data from quadrille instances without altering their original state.

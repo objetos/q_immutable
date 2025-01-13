@@ -1,13 +1,13 @@
 ---
-weight: 8
-title: "isColor(row, col)"
+weight: 3
+title: "isFilled(row, col)"
 ---
 
-Returns `true` if the cell found at `(row, col)` is a [color](https://p5js.org/reference/#/p5.Color) and `false` otherwise.
+Returns `true` if the cell found at `(row, col)` is filled and `false` otherwise. Cells not defined as `null` are considered filled.
 
 ## Syntax
 
-> `isColor(row, col)`
+> `isFilled(row, col)`
 
 ## Parameters
 

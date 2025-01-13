@@ -1,13 +1,13 @@
 ---
 weight: 5
-title: "isFilled(row, col)"
+title: "isNumber(row, col)"
 ---
 
-Returns `true` if the cell found at `(row, col)` is filled and `false` otherwise. Cells not defined as `null` are considered filled.
+Returns `true` if the cell found at `(row, col)` has a number and `false` otherwise.
 
 ## Syntax
 
-> `isFilled(row, col)`
+> `isNumber(row, col)`
 
 ## Parameters
 

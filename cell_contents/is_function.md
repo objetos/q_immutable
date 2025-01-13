@@ -1,13 +1,13 @@
 ---
-weight: 6
-title: "isString(row, col)"
+weight: 9
+title: "isFunction(row, col)"
 ---
 
-Returns `true` if the cell found at `(row, col)` is a string and `false` otherwise.
+Returns `true` if the cell found at `(row, col)` is a function and `false` otherwise.
 
 ## Syntax
 
-> `isString(row, col)`
+> `isFunction(row, col)`
 
 ## Parameters
 

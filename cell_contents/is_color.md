@@ -1,13 +1,13 @@
 ---
-weight: 7
-title: "isNumber(row, col)"
+weight: 6
+title: "isColor(row, col)"
 ---
 
-Returns `true` if the cell found at `(row, col)` has a number and `false` otherwise.
+Returns `true` if the cell found at `(row, col)` is a [color](https://p5js.org/reference/#/p5.Color) and `false` otherwise.
 
 ## Syntax
 
-> `isNumber(row, col)`
+> `isColor(row, col)`
 
 ## Parameters
 
