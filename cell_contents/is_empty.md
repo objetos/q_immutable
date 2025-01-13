@@ -5,10 +5,6 @@ title: "isEmpty(row, col)"
 
 Returns `true` if the cell found at `(row, col)` is empty and `false` otherwise. Only cells defined as `null` are considered empty.
 
-## Example
-
-The `isEmpty()` method is exemplified in [visitQuadrille(quadrille, fx, cells)]({{< ref "visit_quadrille#visitquadrillequadrille-fx-cells" >}}).
-
 ## Syntax
 
 > `isEmpty(row, col)`

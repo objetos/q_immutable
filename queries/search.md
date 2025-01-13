@@ -217,7 +217,6 @@ function update() {
 {{< /details >}}
 
 {{< callout type="info" >}}
-**Observations**  
 - The `reset` function initializes the `pattern` and `board` quadrilles with random sizes and colors. The `pattern` is smaller and random, while the `board` represents the larger search area, containing various colors. This setup is useful for generating new data sets to test the `search` functionality.  
 - The `update` function recalculates the matches (stored in the `hits` array) between the `pattern` and the `board` quadrilles. It also creates a `hint` quadrille, which visually highlights the current `pattern` match during navigation. Without `update`, the application would not reflect changes after editing or randomizing quadrilles.  
 {{< /callout >}}

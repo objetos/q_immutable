@@ -20,6 +20,7 @@ These methods focus on determining the **value** and **type** of cells at a spec
 
 ## Example
 
+(hover over a cell to view its contents)  
 {{< p5-global-iframe quadrille="true" width="625" height="450" >}}
 'use strict';
 
@@ -191,6 +192,12 @@ function pulse() {
 }
 ```
 {{< /details >}}
+
+{{< callout type="info" >}}  
+- **Dynamic Quadrille Methods**: The `cellType` and `cellValue` methods are appended to the `quadrille` object, allowing runtime customization without requiring subclasses. These methods leverage most of the cell content accessors discussed in this section (`is*` methods for type checking and `read(row, col)` for value retrieval, respectively).
+- **Positioning in `displayCellDetails`**: Text positioning dynamically accounts for canvas centering and padding; abstracting this logic can simplify reuse.  
+- **Interactive Features**: A checkbox toggles between displaying cell `type` or `value`, while the `pulse` function provides animated cell feedback.  
+{{< /callout >}}
 
 <!-- 
 ## Example 2: Using Class Inheritance to Implement `cellType` and `cellValue`
