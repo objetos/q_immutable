@@ -71,22 +71,29 @@ function setup() {
 
 function draw() {
   background('black');
-  drawQuadrille(quadrille, { origin: CORNER }); // Render the quadrille
-  // Display text interactively
+  // Draw q1
+  drawQuadrille(quadrille, { origin: CORNER });
+  // Interactive cell details for quadrille
+  displayCellDetails(quadrille);
+}
+
+function displayCellDetails(quadrille, offsetX = 0) {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
-  const x = col * Quadrille.cellLength - width / 2 + 5;
-  const y = row * Quadrille.cellLength - height / 2 + 15;
-  fill('magenta');
-  // Update prefix to reflect it is showing value or type
-  const prefix = `cell(${row}, ${col}) ${value.checked() ? 'value' : 'type'}:`;
-  // Render prefix at its position
-  text(prefix, x, y);
-  // Render value or type slightly below the prefix
-  const cellString = value.checked()
-    ? quadrille.cellValue(row, col)
-    : quadrille.cellType(row, col);
-  text(cellString, x, y + 15); // Offset by 15 pixels below the prefix
+  // Check if row and col are within bounds
+  if (
+    row >= 0 && row < quadrille.height && // Row is within bounds
+    col >= 0 && col < quadrille.width    // Column is within bounds
+  ) {
+    const x = col * Quadrille.cellLength + offsetX - width / 2 + 5;
+    const y = row * Quadrille.cellLength - height / 2 + 15;
+    fill('magenta');
+    const prefix = `cell(${row}, ${col}) ${value.checked() ? 'value' : 'type'}:`;
+    const cellString = value.checked()
+      ? quadrille.cellValue(row, col)
+      : quadrille.cellType(row, col);
+    text(`${prefix}\n${cellString}`, x, y);
+  }
 }
 
 function pulse() {
@@ -149,22 +156,29 @@ function setup() {
 
 function draw() {
   background('black');
-  drawQuadrille(quadrille, { origin: CORNER }); // Render the quadrille
-  // Display text interactively
+  // Draw q1
+  drawQuadrille(quadrille, { origin: CORNER });
+  // Interactive cell details for quadrille
+  displayCellDetails(quadrille);
+}
+
+function displayCellDetails(quadrille, offsetX = 0) {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
-  const x = col * Quadrille.cellLength - width / 2 + 5;
-  const y = row * Quadrille.cellLength - height / 2 + 15;
-  fill('magenta');
-  // Update prefix to reflect it is showing value or type
-  const prefix = `cell(${row}, ${col}) ${value.checked() ? 'value' : 'type'}:`;
-  // Render prefix at its position
-  text(prefix, x, y);
-  // Render value or type slightly below the prefix
-  const cellString = value.checked()
-    ? quadrille.cellValue(row, col)
-    : quadrille.cellType(row, col);
-  text(cellString, x, y + 15); // Offset by 15 pixels below the prefix
+  // Check if row and col are within bounds
+  if (
+    row >= 0 && row < quadrille.height && // Row is within bounds
+    col >= 0 && col < quadrille.width    // Column is within bounds
+  ) {
+    const x = col * Quadrille.cellLength + offsetX - width / 2 + 5;
+    const y = row * Quadrille.cellLength - height / 2 + 15;
+    fill('magenta');
+    const prefix = `cell(${row}, ${col}) ${value.checked() ? 'value' : 'type'}:`;
+    const cellString = value.checked()
+      ? quadrille.cellValue(row, col)
+      : quadrille.cellType(row, col);
+    text(`${prefix}\n${cellString}`, x, y);
+  }
 }
 
 function pulse() {
@@ -240,20 +254,17 @@ function setup() {
 
 function draw() {
   background('black');
-
   // Draw q1 and q2 side by side
   drawQuadrille(q1, { origin: CORNER });
   drawQuadrille(q2, { origin: CORNER, x: q1.width * Quadrille.cellLength + 10 }); // Offset q2 horizontally
-
   // Interactive cell details for q1 and q2
-  displayCellDetails(q1, 0);
-  displayCellDetails(q2, q1.width * Quadrille.cellLength + 20); // Match q2's offset
+  displayCellDetails(q1);
+  displayCellDetails(q2, q1.width * Quadrille.cellLength + 10); // Match q2's offset
 }
 
-function displayCellDetails(quadrille, offsetX) {
+function displayCellDetails(quadrille, offsetX = 0) {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
-
   // Check if row and col are within bounds
   if (
     row >= 0 && row < quadrille.height && // Row is within bounds
@@ -261,14 +272,12 @@ function displayCellDetails(quadrille, offsetX) {
   ) {
     const x = col * Quadrille.cellLength + offsetX - width / 2 + 5;
     const y = row * Quadrille.cellLength - height / 2 + 15;
-
     fill('magenta');
     const prefix = `cell(${row}, ${col}) ${value.checked() ? 'value' : 'type'}:`;
-    text(prefix, x, y);
     const cellString = value.checked()
       ? quadrille.cellValue(row, col)
       : quadrille.cellType(row, col);
-    text(cellString, x, y + 15);
+    text(`${prefix}\n${cellString}`, x, y);
   }
 }
 
@@ -338,20 +347,17 @@ function setup() {
 
 function draw() {
   background('black');
-
   // Draw q1 and q2 side by side
   drawQuadrille(q1, { origin: CORNER });
   drawQuadrille(q2, { origin: CORNER, x: q1.width * Quadrille.cellLength + 10 }); // Offset q2 horizontally
-
   // Interactive cell details for q1 and q2
-  displayCellDetails(q1, 0);
-  displayCellDetails(q2, q1.width * Quadrille.cellLength + 20); // Match q2's offset
+  displayCellDetails(q1);
+  displayCellDetails(q2, q1.width * Quadrille.cellLength + 10); // Match q2's offset
 }
 
-function displayCellDetails(quadrille, offsetX) {
+function displayCellDetails(quadrille, offsetX = 0) {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
-
   // Check if row and col are within bounds
   if (
     row >= 0 && row < quadrille.height && // Row is within bounds
@@ -359,14 +365,12 @@ function displayCellDetails(quadrille, offsetX) {
   ) {
     const x = col * Quadrille.cellLength + offsetX - width / 2 + 5;
     const y = row * Quadrille.cellLength - height / 2 + 15;
-
     fill('magenta');
     const prefix = `cell(${row}, ${col}) ${value.checked() ? 'value' : 'type'}:`;
-    text(prefix, x, y);
     const cellString = value.checked()
       ? quadrille.cellValue(row, col)
       : quadrille.cellType(row, col);
-    text(cellString, x, y + 15);
+    text(`${prefix}\n${cellString}`, x, y);
   }
 }
 
