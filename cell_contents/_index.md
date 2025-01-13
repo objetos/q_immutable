@@ -7,16 +7,16 @@ draft: false
 
 These methods focus on determining the **value** and **type** of cells at a specific `(row, col)` position:  
 
-- **[read(row, col)]({{< ref "read" >}}):** Returns the content of the cell at the specified `row` and `col`.  
-- **[isEmpty(row, col)]({{< ref "is_empty" >}}):** Checks if the specified cell at `row` and `col` is empty.  
-- **[isFilled(row, col)]({{< ref "is_filled" >}}):** Checks if the specified cell at `row` and `col` contains non-empty content.  
-- **[isString(row, col)]({{< ref "is_string" >}}):** Determines if the specified cell at `row` and `col` contains a string.  
-- **[isNumber(row, col)]({{< ref "is_number" >}}):** Determines if the specified cell at `row` and `col` contains a number.  
-- **[isColor(row, col)]({{< ref "is_color" >}}):** Checks if the specified cell at `row` and `col` contains a color.  
-- **[isImage(row, col)]({{< ref "is_image" >}}):** Checks if the specified cell at `row` and `col` contains an image.  
-- **[isArray(row, col)]({{< ref "is_array" >}}):** Determines if the specified cell at `row` and `col` contains an array.  
-- **[isFunction(row, col)]({{< ref "is_function" >}}):** Determines if the specified cell at `row` and `col` contains a function.  
-- **[isObject(row, col)]({{< ref "is_object" >}}):** Determines if the specified cell at `row` and `col` contains an object.
+- **[read(row, col)]({{< relref "read" >}}):** Returns the content of the cell at the specified `row` and `col`.  
+- **[isEmpty(row, col)]({{< relref "is_empty" >}}):** Checks if the specified cell at `row` and `col` is empty.  
+- **[isFilled(row, col)]({{< relref "is_filled" >}}):** Checks if the specified cell at `row` and `col` contains non-empty content.  
+- **[isString(row, col)]({{< relref "is_string" >}}):** Determines if the specified cell at `row` and `col` contains a string.  
+- **[isNumber(row, col)]({{< relref "is_number" >}}):** Determines if the specified cell at `row` and `col` contains a number.  
+- **[isColor(row, col)]({{< relref "is_color" >}}):** Checks if the specified cell at `row` and `col` contains a color.  
+- **[isImage(row, col)]({{< relref "is_image" >}}):** Checks if the specified cell at `row` and `col` contains an image.  
+- **[isArray(row, col)]({{< relref "is_array" >}}):** Determines if the specified cell at `row` and `col` contains an array.  
+- **[isFunction(row, col)]({{< relref "is_function" >}}):** Determines if the specified cell at `row` and `col` contains a function.  
+- **[isObject(row, col)]({{< relref "is_object" >}}):** Determines if the specified cell at `row` and `col` contains an object.
 
 ## Example
 
@@ -194,6 +194,7 @@ function pulse() {
 {{< /details >}}
 
 {{< callout type="info" >}}  
+- This example builds on the [createQuadrille(jagged_array)]({{< relref "create_quadrille_jagged_array#example" >}}) approach—check it out to understand the foundation.  
 - **Dynamic Quadrille Methods**: The `cellType` and `cellValue` methods are appended to the `quadrille` object, allowing runtime customization without requiring subclasses. These methods leverage most of the cell content accessors discussed in this section (`is*` methods for type checking and `read(row, col)` for value retrieval, respectively).
 - **Positioning in `displayCellDetails`**: Text positioning dynamically accounts for canvas centering and padding; abstracting this logic can simplify reuse.  
 - **Interactive Features**: A checkbox toggles between displaying cell `type` or `value`, while the `pulse` function provides animated cell feedback.  
