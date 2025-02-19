@@ -128,7 +128,7 @@ function update() {
 }
 {{< /p5-global-iframe >}}
 
-{{< details title="code" open=false >}}
+{{% details title="code" open=true %}}
 ```js
 const COLS = 20, ROWS = 14;
 let grid, pattern, board, hint;
@@ -214,7 +214,7 @@ function update() {
   hint = Quadrille.neg(hint, color(red(back), green(back), blue(back), 210));
 }
 ```
-{{< /details >}}
+{{% /details %}}
 
 {{< callout type="info" >}}
 - The `reset` function initializes the `pattern` and `board` quadrilles with random sizes and colors. The `pattern` is smaller and random, while the `board` represents the larger search area, containing various colors. This setup is useful for generating new data sets to test the `search` functionality.  

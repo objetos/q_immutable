@@ -107,7 +107,7 @@ function pulse() {
 }
 {{< /p5-global-iframe >}}
 
-{{< details title="code" open=false >}}
+{{% details title="code" open=true %}}
 ```js
 let ps; // Image variable
 let font; // Custom font
@@ -191,7 +191,7 @@ function pulse() {
   circle(0, 0, radius);
 }
 ```
-{{< /details >}}
+{{% /details %}}
 
 {{< callout type="info" >}}  
 - This example builds on the [createQuadrille(jagged_array)]({{< relref "create_quadrille_jagged_array#example" >}}) approach—check it out to understand the foundation.  
