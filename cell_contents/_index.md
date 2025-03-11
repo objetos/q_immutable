@@ -8,6 +8,7 @@ draft: false
 These methods focus on determining the **value** and **type** of cells at a specific `(row, col)` position:  
 
 - **[read(row, col)]({{< relref "read" >}}):** Returns the content of the cell at the specified `row` and `col`.  
+- **[isValid(row, col)]({{< relref "is_valid" >}}):** Checks if the specified cell at `row` and `col` lies within bounds.  
 - **[isEmpty(row, col)]({{< relref "is_empty" >}}):** Checks if the specified cell at `row` and `col` is empty.  
 - **[isFilled(row, col)]({{< relref "is_filled" >}}):** Checks if the specified cell at `row` and `col` contains non-empty content.  
 - **[isString(row, col)]({{< relref "is_string" >}}):** Determines if the specified cell at `row` and `col` contains a string.  

@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 11
 title: "isObject(row, col)"
 ---
 
@@ -13,5 +13,5 @@ Returns `true` if the cell at `(row, col)` contains a value that qualifies as an
 
 | Param    | Description                                                                     |
 |----------|---------------------------------------------------------------------------------|
-| `row`    | Number: col number of the cell to be read [\[0..height\]]({{< ref "height" >}}) |
-| `col`    | Number: row number of the cell to be read [\[0..width\]]({{< ref "width" >}})   |
+| `row`    | Number: col number of the cell to be read [[0..height]]({{< ref "height" >}}) |
+| `col`    | Number: row number of the cell to be read [[0..width]]({{< ref "width" >}})   |

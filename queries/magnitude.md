@@ -54,4 +54,4 @@ function draw() {
 
 | Param    | Description                                                                     |
 |----------|---------------------------------------------------------------------------------|
-| `row`    | Number: col number of the cell to be read [\[0..height\]]({{< ref "height" >}}) |
+| `row`    | Number: col number of the cell to be read [[0..height]]({{< ref "height" >}}) |

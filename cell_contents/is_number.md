@@ -1,5 +1,5 @@
 ---
-weight: 5
+weight: 6
 title: "isNumber(row, col)"
 ---
 
@@ -13,5 +13,5 @@ Returns `true` if the cell found at `(row, col)` has a number and `false` otherw
 
 | Param    | Description                                                                     |
 |----------|---------------------------------------------------------------------------------|
-| `row`    | Number: col number of the cell to be read [\[0..height\]]({{< ref "height" >}}) |
-| `col`    | Number: row number of the cell to be read [\[0..width\]]({{< ref "width" >}})   |
+| `row`    | Number: col number of the cell to be read [[0..height]]({{< ref "height" >}}) |
+| `col`    | Number: row number of the cell to be read [[0..width]]({{< ref "width" >}})   |

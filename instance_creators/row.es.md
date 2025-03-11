@@ -78,4 +78,4 @@ function mouseMoved() {
 
 | parámetro | descripción                                                            |
 |-----------|------------------------------------------------------------------------|
-| row       | Número: número de la fila a leer [\[0..height\]]({{< ref "height" >}}) |
+| row       | Número: número de la fila a leer [[0..height]]({{< ref "height" >}}) |
