@@ -11,7 +11,7 @@ Returns `true` if the cell found at `(row, col)` has a number and `false` otherw
 
 ## Parameters
 
-| Param    | Description                                                                     |
-|----------|---------------------------------------------------------------------------------|
-| `row`    | Number: col number of the cell to be read [[0..height]]({{< ref "height" >}}) |
-| `col`    | Number: row number of the cell to be read [[0..width]]({{< ref "width" >}})   |
+| Param | Description                                                                       |
+|-------|-----------------------------------------------------------------------------------|
+| `row` | Number: row index of the cell to be read `∈` [[0..height]]({{< ref "height" >}})  |
+| `col` | Number: column index of the cell to be read `∈` [[0..width]]({{< ref "width" >}}) |
