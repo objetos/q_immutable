@@ -82,11 +82,7 @@ function draw() {
 function displayCellDetails(quadrille, offsetX = 0) {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
-  // Check if row and col are within bounds
-  if (
-    row >= 0 && row < quadrille.height && // Row is within bounds
-    col >= 0 && col < quadrille.width    // Column is within bounds
-  ) {
+  if (quadrille.isValid(row, col)) {
     const x = col * Quadrille.cellLength + offsetX - width / 2 + 5;
     const y = row * Quadrille.cellLength - height / 2 + 15;
     fill('magenta');
@@ -167,11 +163,7 @@ function draw() {
 function displayCellDetails(quadrille, offsetX = 0) {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
-  // Check if row and col are within bounds
-  if (
-    row >= 0 && row < quadrille.height && // Row is within bounds
-    col >= 0 && col < quadrille.width    // Column is within bounds
-  ) {
+  if (quadrille.isValid(row, col)) {
     const x = col * Quadrille.cellLength + offsetX - width / 2 + 5;
     const y = row * Quadrille.cellLength - height / 2 + 15;
     fill('magenta');
@@ -273,11 +265,7 @@ function draw() {
 function displayCellDetails(quadrille, offsetX = 0) {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
-  // Check if row and col are within bounds
-  if (
-    row >= 0 && row < quadrille.height && // Row is within bounds
-    col >= 0 && col < quadrille.width    // Column is within bounds
-  ) {
+  if (quadrille.isValid(row, col)) {
     const x = col * Quadrille.cellLength + offsetX - width / 2 + 5;
     const y = row * Quadrille.cellLength - height / 2 + 15;
     fill('magenta');
