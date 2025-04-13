@@ -15,3 +15,7 @@ Returns `true` if the cell at `(row, col)` contains a valid image-related type s
 |-------|-----------------------------------------------------------------------------------|
 | `row` | Number: row index of the cell to be read `∈` [[0..height]]({{< ref "height" >}})  |
 | `col` | Number: column index of the cell to be read `∈` [[0..width]]({{< ref "width" >}}) |
+
+{{< callout type="info" >}}
+Also available as the static method `Quadrille.isImage(value)`, which takes a `value` instead of a cell position.
+{{< /callout >}}

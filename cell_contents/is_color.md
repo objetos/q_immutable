@@ -15,3 +15,7 @@ Returns `true` if the cell found at `(row, col)` is a [color](https://p5js.org/r
 |-------|-----------------------------------------------------------------------------------|
 | `row` | Number: row index of the cell to be read `∈` [[0..height]]({{< ref "height" >}})  |
 | `col` | Number: column index of the cell to be read `∈` [[0..width]]({{< ref "width" >}}) |
+
+{{< callout type="info" >}}
+Also available as the static method `Quadrille.isColor(value)`, which takes a `value` instead of a cell position.
+{{< /callout >}}
