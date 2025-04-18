@@ -31,14 +31,13 @@ let quadrille;
 let yellow, blue, red;
 let value; // Checkbox for display toggle
 
-function preload() {
-  // Load image and font in preload
-  ps = loadImage('/images/pola.jpg');
-  font = loadFont('/fonts/noto_sans.ttf');
-}
-
-function setup() {
+async function setup() {
   createCanvas(6 * Quadrille.cellLength, 4 * Quadrille.cellLength, WEBGL);
+  
+  // Load image and font
+  ps = await loadImage('/images/pola.jpg');
+  font = await loadFont('/fonts/noto_sans.ttf');
+  
   textFont(font);
   yellow = color('yellow');
   blue = color('blue');
@@ -112,14 +111,13 @@ let quadrille;
 let yellow, blue, red;
 let value; // Checkbox for display toggle
 
-function preload() {
-  // Load image and font in preload
-  ps = loadImage('/images/pola.jpg');
-  font = loadFont('/fonts/noto_sans.ttf');
-}
-
-function setup() {
+async function setup() {
   createCanvas(6 * Quadrille.cellLength, 4 * Quadrille.cellLength, WEBGL);
+  
+  // Load image and font
+  ps = await loadImage('/images/pola.jpg');
+  font = await loadFont('/fonts/noto_sans.ttf');
+  
   textFont(font);
   yellow = color('yellow');
   blue = color('blue');
