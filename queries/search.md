@@ -124,7 +124,7 @@ function reset() {
 function update() {
   hits = board.search(pattern, strict.checked());
   hint = pattern.clone();
-  hint = Quadrille.neg(hint, color(red(back), green(back), blue(back), 210));
+  hint = Quadrille.not(hint, color(red(back), green(back), blue(back), 210));
 }
 {{< /p5-global-iframe >}}
 
@@ -211,7 +211,7 @@ function reset() {
 function update() {
   hits = board.search(pattern, strict.checked());
   hint = pattern.clone();
-  hint = Quadrille.neg(hint, color(red(back), green(back), blue(back), 210));
+  hint = Quadrille.not(hint, color(red(back), green(back), blue(back), 210));
 }
 ```
 {{% /details %}}
