@@ -85,16 +85,18 @@ function draw() {
   drawQuadrille(board, { col: col2, row: row2, outline: 'magenta' });
   if (hits.length > 0) {
     hit = ((hit % hits.length) + hits.length) % hits.length;
-    drawQuadrille(hint, { row: row2 + hits[hit].row, 
-                          col: col2 + hits[hit].col, outline: 'yellow' });
+    drawQuadrille(hint, {
+      row: row2 + hits[hit].row,
+      col: col2 + hits[hit].col, outline: 'yellow'
+    });
   }
 }
 
-function keyPressed() {
+function keyPressed({ key, code }) {
   if (hits.length) {
-    hit += (keyCode === LEFT_ARROW) ? -1 : (keyCode === RIGHT_ARROW) ? 1 : 0;
+    hit += (code === 'ArrowLeft') ? -1 : (code === 'ArrowRight') ? 1 : 0;
   }
-  if (key === 'r') {
+  if (key === 'r' || key === 'R') {
     reset();
     update();
   }
@@ -109,9 +111,8 @@ function mouseClicked() {
 function fillQuadrille(quadrille) {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
-  const value = mode.value();
-  mode.value() === 'clear' ? quadrille.clear(row, col) : 
-                             quadrille.fill(row, col, colors[mode.value()]);
+  mode.value() === 'clear' ? quadrille.clear(row, col) :
+    quadrille.fill(row, col, colors[mode.value()]);
 }
 
 function reset() {
@@ -172,16 +173,18 @@ function draw() {
   drawQuadrille(board, { col: col2, row: row2, outline: 'magenta' });
   if (hits.length > 0) {
     hit = ((hit % hits.length) + hits.length) % hits.length;
-    drawQuadrille(hint, { row: row2 + hits[hit].row, 
-                          col: col2 + hits[hit].col, outline: 'yellow' });
+    drawQuadrille(hint, {
+      row: row2 + hits[hit].row,
+      col: col2 + hits[hit].col, outline: 'yellow'
+    });
   }
 }
 
-function keyPressed() {
+function keyPressed({ key, code }) {
   if (hits.length) {
-    hit += (keyCode === LEFT_ARROW) ? -1 : (keyCode === RIGHT_ARROW) ? 1 : 0;
+    hit += (code === 'ArrowLeft') ? -1 : (code === 'ArrowRight') ? 1 : 0;
   }
-  if (key === 'r') {
+  if (key === 'r' || key === 'R') {
     reset();
     update();
   }
@@ -196,9 +199,8 @@ function mouseClicked() {
 function fillQuadrille(quadrille) {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
-  const value = mode.value();
-  mode.value() === 'clear' ? quadrille.clear(row, col) : 
-                             quadrille.fill(row, col, colors[mode.value()]);
+  mode.value() === 'clear' ? quadrille.clear(row, col) :
+    quadrille.fill(row, col, colors[mode.value()]);
 }
 
 function reset() {
