@@ -26,23 +26,17 @@ These methods focus on determining the **value** and **type** of cells at a spec
 'use strict';
 
 let ps; // Image variable
-let font; // Custom font
 let quadrille;
 let yellow, blue, red;
 let value; // Checkbox for display toggle
 
 async function setup() {
-  createCanvas(6 * Quadrille.cellLength, 4 * Quadrille.cellLength, WEBGL);
-  
-  // Load image and font
+  createCanvas(6 * Quadrille.cellLength, 4 * Quadrille.cellLength);
+  // Load image
   ps = await loadImage('/images/pola.jpg');
-  font = await loadFont('/fonts/noto_sans.ttf');
-  
-  textFont(font);
   yellow = color('yellow');
   blue = color('blue');
   red = color('red');
-  
   // Quadrille containing cell functions and other content
   quadrille = createQuadrille([
     ['hi', 100, ps, pulse, null, 0],
@@ -73,7 +67,7 @@ async function setup() {
 function draw() {
   background('black');
   // Draw q1
-  drawQuadrille(quadrille, { origin: CORNER });
+  drawQuadrille(quadrille);
   // Interactive cell details for quadrille
   displayCellDetails(quadrille);
 }
@@ -82,8 +76,8 @@ function displayCellDetails(quadrille, offsetX = 0) {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
   if (quadrille.isValid(row, col)) {
-    const x = col * Quadrille.cellLength + offsetX - width / 2 + 5;
-    const y = row * Quadrille.cellLength - height / 2 + 15;
+    const x = col * Quadrille.cellLength + offsetX + 5;
+    const y = row * Quadrille.cellLength + 15;
     fill('magenta');
     const prefix = `cell(${row}, ${col}) ${value.checked() ? 'value' : 'type'}:`;
     const cellString = value.checked()
@@ -94,35 +88,28 @@ function displayCellDetails(quadrille, offsetX = 0) {
 }
 
 function pulse() {
-  background('lime');
   const l = Quadrille.cellLength / 2;
   const radius = map(sin(frameCount * 0.1), -1, 1, 5, l);
   noStroke();
   fill('blue');
-  circle(0, 0, radius);
+  circle(l, l, radius);
 }
 {{< /p5-global-iframe >}}
 
 {{% details title="code" open=true %}}
 ```js
 let ps; // Image variable
-let font; // Custom font
 let quadrille;
 let yellow, blue, red;
 let value; // Checkbox for display toggle
 
 async function setup() {
-  createCanvas(6 * Quadrille.cellLength, 4 * Quadrille.cellLength, WEBGL);
-  
-  // Load image and font
-  ps = await loadImage('/images/pola.jpg');
-  font = await loadFont('/fonts/noto_sans.ttf');
-  
-  textFont(font);
+  createCanvas(6 * Quadrille.cellLength, 4 * Quadrille.cellLength);
+  // Load image
+  ps = await loadImage('pola.jpg');
   yellow = color('yellow');
   blue = color('blue');
   red = color('red');
-  
   // Quadrille containing cell functions and other content
   quadrille = createQuadrille([
     ['hi', 100, ps, pulse, null, 0],
@@ -153,7 +140,7 @@ async function setup() {
 function draw() {
   background('black');
   // Draw q1
-  drawQuadrille(quadrille, { origin: CORNER });
+  drawQuadrille(quadrille);
   // Interactive cell details for quadrille
   displayCellDetails(quadrille);
 }
@@ -162,8 +149,8 @@ function displayCellDetails(quadrille, offsetX = 0) {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
   if (quadrille.isValid(row, col)) {
-    const x = col * Quadrille.cellLength + offsetX - width / 2 + 5;
-    const y = row * Quadrille.cellLength - height / 2 + 15;
+    const x = col * Quadrille.cellLength + offsetX + 5;
+    const y = row * Quadrille.cellLength + 15;
     fill('magenta');
     const prefix = `cell(${row}, ${col}) ${value.checked() ? 'value' : 'type'}:`;
     const cellString = value.checked()
@@ -174,12 +161,11 @@ function displayCellDetails(quadrille, offsetX = 0) {
 }
 
 function pulse() {
-  background('lime');
   const l = Quadrille.cellLength / 2;
   const radius = map(sin(frameCount * 0.1), -1, 1, 5, l);
   noStroke();
   fill('blue');
-  circle(0, 0, radius);
+  circle(l, l, radius);
 }
 ```
 {{% /details %}}
