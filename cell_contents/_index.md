@@ -41,8 +41,8 @@ async function setup() {
   quadrille = createQuadrille([
     ['hi', 100, ps, pulse, null, 0],
     [null, yellow, pulse, ':)'],
-    [null, blue, pulse, 255, ':p'],
-    [null, red, null, 185, ';)', pulse]
+    [null, blue, pulse, 255, '😼'],
+    [null, red, null, 185, '🐲', pulse]
   ]);
   // Method to determine cell type
   quadrille.cellType = function (row, col) {
@@ -114,8 +114,8 @@ async function setup() {
   quadrille = createQuadrille([
     ['hi', 100, ps, pulse, null, 0],
     [null, yellow, pulse, ':)'],
-    [null, blue, pulse, 255, ':p'],
-    [null, red, null, 185, ';)', pulse]
+    [null, blue, pulse, 255, '😼'],
+    [null, red, null, 185, '🐲', pulse]
   ]);
   // Method to determine cell type
   quadrille.cellType = function (row, col) {
