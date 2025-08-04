@@ -1,5 +1,5 @@
 ---
-weight: 7
+weight: 9
 title: "isColor(row, col)"
 ---
 

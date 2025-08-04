@@ -1,5 +1,5 @@
 ---
-weight: 11
+weight: 13
 title: "isObject(row, col)"
 ---
 

@@ -11,13 +11,16 @@ These methods focus on determining the **value** and **type** of cells at a spec
 - **[isValid(row, col)]({{< relref "is_valid" >}}):** Checks if the specified cell at `row` and `col` lies within bounds.  
 - **[isEmpty(row, col)]({{< relref "is_empty" >}}):** Checks if the specified cell at `row` and `col` is empty.  
 - **[isFilled(row, col)]({{< relref "is_filled" >}}):** Checks if the specified cell at `row` and `col` contains non-empty content.  
-- **[isString(row, col)]({{< relref "is_string" >}}):** Determines if the specified cell at `row` and `col` contains a string.  
+- **[isBoolean(row, col)]({{< relref "is_boolean" >}}):** Determines if the specified cell at `row` and `col` contains a boolean.  
 - **[isNumber(row, col)]({{< relref "is_number" >}}):** Determines if the specified cell at `row` and `col` contains a number.  
+- **[isBigInt(row, col)]({{< relref "is_bigint" >}}):** Determines if the specified cell at `row` and `col` contains a bigint.  
+- **[isString(row, col)]({{< relref "is_string" >}}):** Determines if the specified cell at `row` and `col` contains a string.  
 - **[isColor(row, col)]({{< relref "is_color" >}}):** Checks if the specified cell at `row` and `col` contains a color.  
 - **[isImage(row, col)]({{< relref "is_image" >}}):** Checks if the specified cell at `row` and `col` contains an image.  
 - **[isArray(row, col)]({{< relref "is_array" >}}):** Determines if the specified cell at `row` and `col` contains an array.  
 - **[isFunction(row, col)]({{< relref "is_function" >}}):** Determines if the specified cell at `row` and `col` contains a function.  
-- **[isObject(row, col)]({{< relref "is_object" >}}):** Determines if the specified cell at `row` and `col` contains an object.
+- **[isObject(row, col)]({{< relref "is_object" >}}):** Determines if the specified cell at `row` and `col` contains an object.  
+- **[isSymbol(row, col)]({{< relref "is_symbol" >}}):** Determines if the specified cell at `row` and `col` contains a symbol.  
 
 ## Example
 
@@ -39,20 +42,23 @@ async function setup() {
   red = color('red');
   // Quadrille containing cell functions and other content
   quadrille = createQuadrille([
-    ['hi', 100, ps, pulse, null, 0],
-    [null, yellow, pulse, ':)'],
-    [null, blue, pulse, 255, '😼'],
-    [null, red, null, 185, '🐲', pulse]
+    ['hi', 100, ps, pulse, 150n, { type:'Fiat', model:'500' }],
+    [null, yellow, Symbol('id'), ':)'],
+    [[0, 1], blue, true, 255, '😼'],
+    [false, red, null, 185, '🐲', pulse]
   ]);
   // Method to determine cell type
   quadrille.cellType = function (row, col) {
     if (this.isImage(row, col)) return `image`;
+    if (this.isBigInt(row, col)) return `bigint`;
+    if (this.isBoolean(row, col)) return `boolean`;
     if (this.isNumber(row, col)) return `number`;
     if (this.isColor(row, col)) return `color`;
     if (this.isFunction(row, col)) return `function`;
     if (this.isObject(row, col)) return `object`;
     if (this.isString(row, col)) return `string`;
     if (this.isArray(row, col)) return `array`;
+    if (this.isSymbol(row, col)) return `symbol`;
     if (this.isEmpty(row, col)) return `empty`;
   };
   // Method to determine cell value
@@ -80,10 +86,12 @@ function displayCellDetails(quadrille, offsetX = 0) {
     const y = row * Quadrille.cellLength + 15;
     fill('magenta');
     const prefix = `cell(${row}, ${col}) ${value.checked() ? 'value' : 'type'}:`;
-    const cellString = value.checked()
-      ? quadrille.cellValue(row, col)
-      : quadrille.cellType(row, col);
-    text(`${prefix}\n${cellString}`, x, y);
+    const cellInfo = String(
+      value.checked()
+        ? quadrille.cellValue(row, col)
+        : quadrille.cellType(row, col)
+    );
+    text(`${prefix}\n${cellInfo}`, x, y);
   }
 }
 
@@ -112,20 +120,23 @@ async function setup() {
   red = color('red');
   // Quadrille containing cell functions and other content
   quadrille = createQuadrille([
-    ['hi', 100, ps, pulse, null, 0],
-    [null, yellow, pulse, ':)'],
-    [null, blue, pulse, 255, '😼'],
-    [null, red, null, 185, '🐲', pulse]
+    ['hi', 100, ps, pulse, 150n, { type:'Fiat', model:'500' }],
+    [null, yellow, Symbol('id'), ':)'],
+    [[0, 1], blue, true, 255, '😼'],
+    [false, red, null, 185, '🐲', pulse]
   ]);
   // Method to determine cell type
   quadrille.cellType = function (row, col) {
     if (this.isImage(row, col)) return `image`;
+    if (this.isBigInt(row, col)) return `bigint`;
+    if (this.isBoolean(row, col)) return `boolean`;
     if (this.isNumber(row, col)) return `number`;
     if (this.isColor(row, col)) return `color`;
     if (this.isFunction(row, col)) return `function`;
     if (this.isObject(row, col)) return `object`;
     if (this.isString(row, col)) return `string`;
     if (this.isArray(row, col)) return `array`;
+    if (this.isSymbol(row, col)) return `symbol`;
     if (this.isEmpty(row, col)) return `empty`;
   };
   // Method to determine cell value
@@ -153,10 +164,12 @@ function displayCellDetails(quadrille, offsetX = 0) {
     const y = row * Quadrille.cellLength + 15;
     fill('magenta');
     const prefix = `cell(${row}, ${col}) ${value.checked() ? 'value' : 'type'}:`;
-    const cellString = value.checked()
-      ? quadrille.cellValue(row, col)
-      : quadrille.cellType(row, col);
-    text(`${prefix}\n${cellString}`, x, y);
+    const cellInfo = String(
+      value.checked()
+        ? quadrille.cellValue(row, col)
+        : quadrille.cellType(row, col)
+    );
+    text(`${prefix}\n${cellInfo}`, x, y);
   }
 }
 

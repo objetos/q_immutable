@@ -1,13 +1,13 @@
 ---
-weight: 8
-title: "isString(row, col)"
+weight: 7
+title: "isBigInt(row, col)"
 ---
 
-Returns `true` if the cell found at `(row, col)` is a string and `false` otherwise.
+Returns `true` if the cell at `(row, col)` contains a bigint; otherwise, returns `false`.
 
 ## Syntax
 
-> `isString(row, col)`
+> `isBigInt(row, col)`
 
 ## Parameters
 
@@ -17,5 +17,5 @@ Returns `true` if the cell found at `(row, col)` is a string and `false` otherwi
 | `col` | Number: column index of the cell to be read `∈` [[0..width]]({{< ref "width" >}}) |
 
 {{< callout type="info" >}}
-Also available as the static method `Quadrille.isString(value)`, which takes a `value` instead of a cell position.
+Also available as the static method `Quadrille.isBigInt(value)`, which takes a `value` instead of a cell position.
 {{< /callout >}}
