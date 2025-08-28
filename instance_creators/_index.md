@@ -10,3 +10,4 @@ _Instance accessors_ generate new `quadrille` instances derived from the origina
 - **[clone()]({{< ref "clone" >}}):** Creates a [shallow copy](https://en.wikipedia.org/wiki/Object_copying#Shallow_copy) of the quadrille.  
 - **[row(row)]({{< ref "row" >}}):** Creates a new quadrille containing only the specified `row`.  
 - **[ring(row, col, dimension)]({{< ref "ring" >}}):** Creates a new quadrille representing a ring of cells around the specified `row` and `col` with the given `dimension`.  
+- **[crop(row, col, width, height)]({{< ref "crop" >}}):** Creates a new quadrille representing the rectangular region anchored at `(row, col)` with the given `width` and `height`.
