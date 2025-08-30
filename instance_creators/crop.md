@@ -33,7 +33,7 @@ function setup() {
   quadrille.rand(20, olive).rand(30, yellow).fill(fuchsia);
   wrap = createCheckbox(' wrap', true);
   wrap.position(400 - 70, 200 - 22);
-  wrap.changed(update);
+  wrap.changed(() => update());
   update();
 }
 
@@ -106,7 +106,7 @@ function setup() {
   quadrille.rand(20, olive).rand(30, yellow).fill(fuchsia);
   wrap = createCheckbox(' wrap', true);
   wrap.position(400 - 70, 200 - 22);
-  wrap.changed(update);
+  wrap.changed(() => update());
   update();
 }
 

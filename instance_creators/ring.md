@@ -28,11 +28,8 @@ function setup() {
   hint = createQuadrille(dimension * 2 + 1, dimension * 2 + 1);
   wrap = createCheckbox(' wrap', true);
   wrap.position(400 - 70, 200 - 22);
-  wrap.changed(() => {
-    ring = quadrille.ring(quadrille.mouseRow, quadrille.mouseCol, dimension, wrap.checked());
-  });
-
-  ring = quadrille.ring(quadrille.mouseRow, quadrille.mouseCol, dimension, wrap.checked());
+  wrap.changed(() => update());
+  update();
 }
 
 function draw() {
@@ -45,16 +42,22 @@ function draw() {
 }
 
 function mouseMoved() {
-  ring = quadrille.ring(quadrille.mouseRow, quadrille.mouseCol, dimension, wrap.checked());
-  return false;
+  update();
 }
 
 function keyPressed() {
   // convert string to number using +
   dimension = +key;
   dimension = constrain(dimension ||= 1, 1, 4);
-  ring = quadrille.ring(quadrille.mouseRow, quadrille.mouseCol, dimension, wrap.checked());
   hint.width = hint.height = dimension * 2 + 1;
+  update();
+}
+
+function update() {
+  ring = quadrille.ring(quadrille.mouseRow,
+                        quadrille.mouseCol,
+                        dimension,
+                        wrap.checked());
 }
 {{< /p5-global-iframe >}}
 
@@ -77,11 +80,8 @@ function setup() {
   hint = createQuadrille(dimension * 2 + 1, dimension * 2 + 1);
   wrap = createCheckbox(' wrap', true);
   wrap.position(400 - 70, 200 - 22);
-  wrap.changed(() => {
-    ring = quadrille.ring(quadrille.mouseRow, quadrille.mouseCol, dimension, wrap.checked());
-  });
-
-  ring = quadrille.ring(quadrille.mouseRow, quadrille.mouseCol, dimension, wrap.checked());
+  wrap.changed(() => update());
+  update();
 }
 
 function draw() {
@@ -94,16 +94,22 @@ function draw() {
 }
 
 function mouseMoved() {
-  ring = quadrille.ring(quadrille.mouseRow, quadrille.mouseCol, dimension, wrap.checked());
-  return false;
+  update();
 }
 
 function keyPressed() {
   // convert string to number using +
   dimension = +key;
   dimension = constrain(dimension ||= 1, 1, 4);
-  ring = quadrille.ring(quadrille.mouseRow, quadrille.mouseCol, dimension, wrap.checked());
   hint.width = hint.height = dimension * 2 + 1;
+  update();
+}
+
+function update() {
+  ring = quadrille.ring(quadrille.mouseRow,
+                        quadrille.mouseCol,
+                        dimension,
+                        wrap.checked());
 }
 ```
 {{% /details %}}
