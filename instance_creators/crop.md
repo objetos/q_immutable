@@ -1,14 +1,15 @@
 ---
-weight: 4
-title: "crop(row, col, width, height)"
+weight: 3
+title: "crop(row, col, width, height, wrap)"
 ---
 
-Returns the rectangular **region** anchored at `(row, col)` as a **new quadrille**.
+Returns the rectangular **region** anchored at `(row, col)` as a **new quadrille**.  
 
-* `width > 0` grows **right**, `width < 0` grows **left**.
-* `height > 0` grows **down**, `height < 0` grows **up**.
-* If either `width` or `height` is `0`, nothing is cropped.
-* If the rectangle extends beyond the grid, the out-of-bounds area is filled with empty cells, so the result is always a quadrille of size `width × height`.
+* `width > 0` grows **right**, `width < 0` grows **left`.  
+* `height > 0` grows **down**, `height < 0` grows **up`.  
+* If either `width` or `height` is `0`, nothing is cropped.  
+* If `wrap` is `true` (default), indices wrap toroidally at the borders; when `false`, out-of-bounds area is taken as empty.  
+* The result is always a quadrille of size `|width| × |height|`.  
 
 ## Example
 
@@ -20,6 +21,7 @@ Quadrille.cellLength = 20;
 let quadrille, cropped, hint;
 let w = -3, h = 3;
 let lime, olive, yellow, fuchsia;
+let wrap;
 
 function setup() {
   createCanvas(400, 200);
@@ -29,6 +31,9 @@ function setup() {
   fuchsia = color('fuchsia');
   quadrille = createQuadrille(10, 10, 25, lime);
   quadrille.rand(20, olive).rand(30, yellow).fill(fuchsia);
+  wrap = createCheckbox(' wrap', true);
+  wrap.position(400 - 70, 200 - 22);
+  wrap.changed(update);
   update();
 }
 
@@ -79,7 +84,7 @@ function update() {
   // Keep the hint sized to |w| × |h|
   hint = createQuadrille(Math.abs(w), Math.abs(h));
   // Try cropping; may return undefined if out of bounds
-  cropped = quadrille.crop(row, col, w, h);
+  cropped = quadrille.crop(row, col, w, h, wrap.checked());
 }
 {{< /p5-global-iframe >}}
 
@@ -89,6 +94,7 @@ Quadrille.cellLength = 20;
 let quadrille, cropped, hint;
 let w = -3, h = 3;
 let lime, olive, yellow, fuchsia;
+let wrap;
 
 function setup() {
   createCanvas(400, 200);
@@ -98,6 +104,9 @@ function setup() {
   fuchsia = color('fuchsia');
   quadrille = createQuadrille(10, 10, 25, lime);
   quadrille.rand(20, olive).rand(30, yellow).fill(fuchsia);
+  wrap = createCheckbox(' wrap', true);
+  wrap.position(400 - 70, 200 - 22);
+  wrap.changed(update);
   update();
 }
 
@@ -148,14 +157,14 @@ function update() {
   // Keep the hint sized to |w| × |h|
   hint = createQuadrille(Math.abs(w), Math.abs(h));
   // Try cropping; may return undefined if out of bounds
-  cropped = quadrille.crop(row, col, w, h);
+  cropped = quadrille.crop(row, col, w, h, wrap.checked());
 }
 ```
 {{% /details %}}
 
 ## Syntax
 
-> `crop(row, col, width, height)`
+> `crop(row, col, width, height, [wrap = true])`
 
 ## Parameters
 
@@ -165,3 +174,4 @@ function update() {
 | `col`    | Number: anchor column (the starting cell’s column)                           |
 | `width`  | Number: rectangle width; `> 0` to the right, `< 0` to the left; `0` disables |
 | `height` | Number: rectangle height; `> 0` downward, `< 0` upward; `0` disables         |
+| `wrap`      | Boolean: when `true` (default), indices wrap toroidally at borders; when `false`, out-of-bounds cells are taken as empty |
