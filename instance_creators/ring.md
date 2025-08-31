@@ -3,7 +3,7 @@ weight: 4
 title: "ring(row, col, dimension, wrap)"
 ---
 
-Returns the **ring of neighbor cells** of radius `dimension` centered at `(row, col)` as a new quadrille. If `wrap` is `true` (default), indices wrap toroidally at the borders; otherwise, out-of-bounds cells are taken as empty. The returned quadrille has size `(2·dimension + 1) × (2·dimension + 1)`.
+Returns a new quadrille representing the **square ring of neighboring cells** of radius `dimension` centered at `(row, col)`. When `wrap` is `true`, indices wrap toroidally across borders; when `false` (default), out-of-bounds positions are treated as empty. The result has size `(2·dimension + 1) × (2·dimension + 1)`.
 
 ## Example
 
@@ -26,7 +26,7 @@ function setup() {
   quadrille = createQuadrille(10, 10, 25, lime);
   quadrille.rand(20, olive).rand(30, yellow).fill(fuchsia);
   hint = createQuadrille(dimension * 2 + 1, dimension * 2 + 1);
-  wrap = createCheckbox(' wrap', true);
+  wrap = createCheckbox(' wrap', false);
   wrap.position(400 - 70, 200 - 22);
   wrap.changed(() => update());
   update();
@@ -78,7 +78,7 @@ function setup() {
   quadrille = createQuadrille(10, 10, 25, lime);
   quadrille.rand(20, olive).rand(30, yellow).fill(fuchsia);
   hint = createQuadrille(dimension * 2 + 1, dimension * 2 + 1);
-  wrap = createCheckbox(' wrap', true);
+  wrap = createCheckbox(' wrap', false);
   wrap.position(400 - 70, 200 - 22);
   wrap.changed(() => update());
   update();
@@ -116,7 +116,7 @@ function update() {
 
 ## Syntax
 
-> `ring(row, col, [dimension = 1], [wrap = true])`
+> `ring(row, col, [dimension = 1], [wrap = false])`
 
 ## Parameters
 
@@ -125,4 +125,4 @@ function update() {
 | `row`       | Number: col number of the cell to be read [[0..height]]({{< ref "height" >}}) |
 | `col`       | Number: row number of the cell to be read [[0..width]]({{< ref "width" >}})   |
 | `dimension` | Number: ring dimension default is 1                                           |
-| `wrap`      | Boolean: when `true` (default), indices wrap toroidally at borders; when `false`, out-of-bounds cells are taken as empty |
+| `wrap`      | Boolean: when `true`, indices wrap toroidally at borders; when `false` (default), out-of-bounds cells are taken as empty |
