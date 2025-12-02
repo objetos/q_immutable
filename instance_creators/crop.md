@@ -13,7 +13,7 @@ Returns the rectangular **region** anchored at `(row, col)` as a **new quadrille
 
 ## Example
 
-(click on canvas, move the mouse, and press the arrow keys)
+(click on canvas, move the mouse, and press the arrow keys)  
 {{< p5-global-iframe quadrille="true" width="425" height="225" >}}
 'use strict';
 

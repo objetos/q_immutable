@@ -7,7 +7,7 @@ Returns a new quadrille representing the **square ring of neighboring cells** of
 
 ## Example
 
-(click on canvas, move mouse and press keys **1** to **4**)\
+(click on canvas, move mouse and press keys **1** to **4**)  
 {{< p5-global-iframe quadrille="true" width="425" height="225" >}}
 'use strict';
 
