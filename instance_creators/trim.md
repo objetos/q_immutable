@@ -7,16 +7,86 @@ Returns a new quadrille trimmed to its minimal [span]({{< relref span >}}) of fi
 
 ## Example
 
-(click on canvas, move mouse and press keys **1** to **4**)  
-{{< p5-global-iframe quadrille="true" width="425" height="225" >}}
+(press mouse or press keys to randomize chess pattern)  
+{{< p5-global-iframe quadrille="true" width="345" height="345" >}}
 'use strict';
 
+Quadrille.cellLength = 40;
+const COLS = 8, ROWS = 8;
+let board, pattern, hint;
+const r = Quadrille.chessSymbols.get('r');
+const k = Quadrille.chessSymbols.get('k');
+const N = Quadrille.chessSymbols.get('N');
 
+function setup() {
+  createCanvas(COLS* Quadrille.cellLength, ROWS * Quadrille.cellLength);
+  board = createQuadrille();
+  pattern = createQuadrille(8, 8);
+  update();
+}
+
+function draw() {
+  background('darkkhaki');
+  drawQuadrille(board, { tileDisplay: 0 });
+  drawQuadrille(pattern, { textColor: 'black', tileDisplay: 0 });
+  drawQuadrille(hint, { tileDisplay: 0 });
+}
+
+function keyPressed() {
+  update();
+}
+
+function mousePressed() {
+  update();
+}
+
+function update() {
+  pattern.clear().rand(1, r).rand(1, k).rand(1, N);
+  const span = pattern.span;
+  const trimmed = pattern.trim().fill(1);
+  hint = Quadrille.or(createQuadrille(8, 8), trimmed, span.row, span.col);
+  hint.not(color(0, 180));
+}
 {{< /p5-global-iframe >}}
 
 {{% details title="code" open=true %}}
 ```js
+Quadrille.cellLength = 40;
+const COLS = 8, ROWS = 8;
+let board, pattern, hint;
+const r = Quadrille.chessSymbols.get('r');
+const k = Quadrille.chessSymbols.get('k');
+const N = Quadrille.chessSymbols.get('N');
 
+function setup() {
+  createCanvas(COLS* Quadrille.cellLength, ROWS * Quadrille.cellLength);
+  board = createQuadrille();
+  pattern = createQuadrille(8, 8);
+  update();
+}
+
+function draw() {
+  background('darkkhaki');
+  drawQuadrille(board, { tileDisplay: 0 });
+  drawQuadrille(pattern, { textColor: 'black', tileDisplay: 0 });
+  drawQuadrille(hint, { tileDisplay: 0 });
+}
+
+function keyPressed() {
+  update();
+}
+
+function mousePressed() {
+  update();
+}
+
+function update() {
+  pattern.clear().rand(1, r).rand(1, k).rand(1, N);
+  const span = pattern.span;
+  const trimmed = pattern.trim().fill(1);
+  hint = Quadrille.or(createQuadrille(8, 8), trimmed, span.row, span.col);
+  hint.not(color(0, 180));
+}
 ```
 {{% /details %}}
 
