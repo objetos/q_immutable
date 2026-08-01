@@ -7,7 +7,7 @@ Returns the number of non-empty cells of a given quadrille row.
 
 ## Example
 
-{{< p5-global-iframe quadrille="true" width="425" height="425" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.cellLength = 50;
 let quadrille;
@@ -24,7 +24,7 @@ function draw() {
   text(`magnitude(${quadrille.mouseRow}): ` + 
         quadrille.magnitude(quadrille.mouseRow), 20, 20);
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -54,4 +54,4 @@ function draw() {
 
 | Param    | Description                                                                     |
 |----------|---------------------------------------------------------------------------------|
-| `row`    | Number: col number of the cell to be read [[0..height]]({{< ref "height" >}}) |
+| `row`    | Number: row whose filled cells are counted [[0..height]]({{< ref "height" >}}) |

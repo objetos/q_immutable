@@ -4,44 +4,34 @@ draft: false
 title: "search(pattern, strict)"
 ---
 
-Searches for `pattern` within this quadrille and returns an array of `{row, col}` matches. The array length may be 0 if no matches are found. In `strict` mode (i.e., `strict = true`), for a `pattern` to be successfully found within a `quadrille`, the values inside the `pattern` must be identical instances to those in the `quadrille`. Conversely, in non-`strict` mode (i.e., `strict = false`), only the presence of filled cells is required, without regard for their contents.
+Searches this quadrille for every placement of `pattern` and returns the matches as an array of `{row, col}` upper-left corners — empty on failure, uniformly, with no special cases to test for: the same return convention [path]({{< ref "path" >}}) follows. Check `hits.length` for success; index `hits[i].row` / `hits[i].col` to use a match.
 
-For instance, here:
+What counts as a match depends on `strict`:
+
+- **Non-strict** (default): a placement matches when this quadrille is **filled** wherever the `pattern` is filled — values are ignored, only the shape matters.
+- **Strict**: the values must additionally be **the same instances** (`===`) — reference identity, not lookalikes.
+
 ```js
-let value;
+let shared;
 let quadrille, pattern;
 
 function setup() {
-  value = createColor('blue'); // 'blue' is created once and stored in 'value'
-  quadrille = createQuadrille([125, value, 'hi']); 
-  pattern = createQuadrille([value, 'hi']);
-  // quadrille and pattern share the same 'blue' instance stored in 'value'
-  // quadrille.read(0, 1) === pattern.read(0, 0) // is true
-  quadrille.search(pattern, true); // finds it
-  // quadrille.search(pattern, false); // would find it as well
+  shared = color('blue');           // one instance, stored once, used twice
+  quadrille = createQuadrille([125, shared, 'hi']);
+  pattern = createQuadrille([shared, 'hi']);
+  quadrille.search(pattern, true);  // [{row: 0, col: 1}] — same 'blue' instance
+  pattern = createQuadrille([color('blue'), 'hi']);
+  quadrille.search(pattern, true);  // [] — a lookalike 'blue' is a different instance
+  quadrille.search(pattern);        // [{row: 0, col: 0}, {row: 0, col: 1}] — non-strict: shape only
 }
 ```
-both `quadrille` and `pattern` are using the same instance of the color `'blue'` stored in the variable `value`. Therefore, when comparing the values in `quadrille` and `pattern`, they match in memory reference.
 
-Whereas here:
-```js
-let quadrille, pattern;
-
-function setup() {
-  quadrille = createQuadrille([125, createColor('blue'), 'hi']);
-  pattern = createQuadrille([createColor('blue'), 'hi']);
-  // quadrille and pattern have their own separate instances of 'blue'
-  // quadrille.read(0, 1) === pattern.read(0, 0) // is false
-  quadrille.search(pattern, true); // doesn't find
-  // quadrille.search(pattern, false); // would find it
-}
-```
-`quadrille` and `pattern` are using different instances of the color `'blue'`, created separately by two calls to `createColor('blue')`. Even though both instances represent the color `'blue'`, they are distinct objects in memory. Therefore, when comparing the values in `quadrille` and `pattern`, they don't match in memory reference.
+Primitives compare by value (`'hi' === 'hi'`), so strict mode bites on objects — colors, images, class instances: two calls to `color('blue')` produce two distinct instances that render identically yet never strict-match. Store a shared instance once (the `shared` variable above) when strict matching is the goal.
 
 ## Example
 
 (click cells to edit pattern and quadrille; left / right arrow keys to move to next found hit)\
-{{< p5-global-iframe quadrille="true" width="625" height="470" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 const COLS = 20, ROWS = 14;
 let grid, pattern, board, hint;
@@ -127,7 +117,7 @@ function update() {
   hint = pattern.clone();
   hint = Quadrille.not(hint, color(red(back), green(back), blue(back), 210));
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -223,6 +213,10 @@ function update() {
 - The `update` function recalculates the matches (stored in the `hits` array) between the `pattern` and the `board` quadrilles. It also creates a `hint` quadrille, which visually highlights the current `pattern` match during navigation. Without `update`, the application would not reflect changes after editing or randomizing quadrilles.  
 {{< /callout >}}
 
+{{< callout type="info" >}}
+In game code the `hits` array is the whole story: `hits.length` answers *did the pattern occur* (three-in-a-row, a tetromino, a formation), and each `{row, col}` corner places a response — highlight, capture, score — via [fill]({{< ref "fill" >}}) or a second quadrille drawn at that offset, as the example's `hint` does. [path]({{< ref "path" >}}) speaks the same dialect for movement: array in hand, empty means no.
+{{< /callout >}}
+
 ## Syntax
 
 > `search(pattern, [strict = false])`
@@ -232,4 +226,4 @@ function update() {
 | Param | Description                                                                                                      |
 |-----------|------------------------------------------------------------------------------------------------------------------|
 | `pattern` | Quadrille: pattern to be searched                                                                                |
-| `strict`  | Boolean: If `false` (default), searches only the presence of filled cells; if `true`, searches for identical value instances |
+| `strict`  | Boolean: If `false` (default), a match only requires filled cells wherever the pattern is filled (shape only); if `true`, values must also be identical instances (`===`) |
