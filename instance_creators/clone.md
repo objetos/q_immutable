@@ -8,7 +8,7 @@ Returns a [shallow copy](https://en.wikipedia.org/wiki/Object_copying#Shallow_co
 ## Example
 
 (click on canvas and / or press any key)\
-{{< p5-global-iframe quadrille="true" width="675" height="325" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.cellLength = 50;
 let quadrille, clone;
@@ -39,7 +39,7 @@ function keyPressed() {
   clone.replace(color2, color2Update);
   color2 = color2Update;
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -74,6 +74,10 @@ function keyPressed() {
 }
 ```
 {{% /details %}}
+
+{{< callout type="info" >}}
+**Shallow means cell values are shared references.** Clicking mutates the shared `color1` instance in place — both quadrilles change together, since their cells point at the same object. Pressing a key instead [replace]({{< ref "replace_value1_value2" >}})s `color2` in the **clone only** with a fresh instance — the original keeps the old one. Same identity story as [fill(value)]({{< ref "fill_value" >}}) and strict [search]({{< ref "search" >}}).
+{{< /callout >}}
 
 ## Syntax
 

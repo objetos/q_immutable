@@ -3,7 +3,7 @@ weight: 1
 title: "read(row, col)"
 ---
 
-Returns the contents of the quadrille cell at `(row, col)`. Returns `undefined` if the cell doesn't exist.
+Returns the contents of the quadrille cell at `(row, col)`. Returns `undefined` if the cell doesn't exist (out of bounds) — and note `undefined == null`, so such reads count as **empty** to [isEmpty]({{< ref "is_empty" >}}).
 
 ## Syntax
 

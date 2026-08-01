@@ -5,16 +5,16 @@ title: "crop(row, col, width, height, wrap)"
 
 Returns the rectangular **region** anchored at `(row, col)` as a **new quadrille**.  
 
-* `width > 0` grows **right**, `width < 0` grows **left`.  
-* `height > 0` grows **down**, `height < 0` grows **up`.  
-* If either `width` or `height` is `0`, nothing is cropped.  
+* `width > 0` grows **right**, `width < 0` grows **left**.  
+* `height > 0` grows **down**, `height < 0` grows **up**.  
+* If either `width` or `height` is `0` (or non-finite), a warning is issued and `undefined` is returned.  
 * If `wrap` is `true`, indices wrap toroidally at the borders; when `false` (default), out-of-bounds area is taken as empty.  
-* The result is always a quadrille of size `|width| × |height|`.  
+* Otherwise the result is always a quadrille of size `|width| × |height|`.  
 
 ## Example
 
 (click on canvas, move the mouse, and press the arrow keys)  
-{{< p5-global-iframe quadrille="true" width="425" height="225" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 
 Quadrille.cellLength = 20;
@@ -83,10 +83,10 @@ function update() {
   }
   // Keep the hint sized to |w| × |h|
   hint = createQuadrille(Math.abs(w), Math.abs(h));
-  // Try cropping; may return undefined if out of bounds
+  // Crop; region cells out of bounds are taken as empty (or wrapped)
   cropped = quadrille.crop(row, col, w, h, wrap.checked());
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -156,7 +156,7 @@ function update() {
   }
   // Keep the hint sized to |w| × |h|
   hint = createQuadrille(Math.abs(w), Math.abs(h));
-  // Try cropping; may return undefined if out of bounds
+  // Crop; region cells out of bounds are taken as empty (or wrapped)
   cropped = quadrille.crop(row, col, w, h, wrap.checked());
 }
 ```

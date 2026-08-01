@@ -3,11 +3,11 @@ weight: 2
 title: "row(row)"
 ---
 
-Returns a row as a new quadrille.
+Returns the specified row as a new `1 × width` quadrille — a shallow copy: cell values are **shared references** with the original. Returns `undefined` on an invalid `row`.
 
 ## Example
 
-{{< p5-global-iframe quadrille="true" width="325" height="385" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.cellLength = 30;
 let quadrille, row, hint;
@@ -36,7 +36,7 @@ function mouseMoved() {
   row = quadrille.row(quadrille.mouseRow) || row;
   return false;
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -78,4 +78,4 @@ function mouseMoved() {
 
 | Param    | Description                                                                     |
 |----------|---------------------------------------------------------------------------------|
-| `row`    | Number: col number of the cell to be read [[0..height]]({{< ref "height" >}}) |
+| `row`    | Number: index of the row to extract [[0..height]]({{< ref "height" >}})       |

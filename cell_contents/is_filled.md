@@ -3,7 +3,7 @@ weight: 4
 title: "isFilled(row, col)"
 ---
 
-Returns `true` if the cell found at `(row, col)` is filled and `false` otherwise. Cells not defined as `null` are considered filled.
+Returns `true` if the cell found at `(row, col)` is filled and `false` otherwise. Filled means `!= null` — the exact complement of [isEmpty]({{< ref "is_empty" >}}): out-of-bounds positions [read]({{< ref "read" >}}) as `undefined` and thus count as **not** filled.
 
 ## Syntax
 

@@ -3,12 +3,12 @@ weight: 4
 title: "ring(row, col, dimension, wrap)"
 ---
 
-Returns a new quadrille representing the **square ring of neighboring cells** of radius `dimension` centered at `(row, col)`. When `wrap` is `true`, indices wrap toroidally across borders; when `false` (default), out-of-bounds positions are treated as empty. The result has size `(2·dimension + 1) × (2·dimension + 1)`.
+Returns a new quadrille representing the **square block of cells** of radius `dimension` centered at `(row, col)` — the **center cell included**. Sugar over [crop]({{< ref "crop" >}}): `crop(row - dimension, col - dimension, 2·dimension + 1, 2·dimension + 1, wrap)`. When `wrap` is `true`, indices wrap toroidally across borders; when `false` (default), out-of-bounds positions are treated as empty. The result has size `(2·dimension + 1) × (2·dimension + 1)`.
 
 ## Example
 
 (click on canvas, move mouse and press keys **1** to **4**)  
-{{< p5-global-iframe quadrille="true" width="425" height="225" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 
 Quadrille.cellLength = 20;
@@ -59,7 +59,7 @@ function update() {
                         dimension,
                         wrap.checked());
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -114,6 +114,10 @@ function update() {
 ```
 {{% /details %}}
 
+{{< callout type="info" >}}
+**The ring includes its center**, so on a filled center `ring(row, col).order` counts the center too. The Minesweeper counting idiom — `mines.ring(row, col).order` as the neighbor-mine count — works because it is computed only on **empty** centers; and since out-of-bounds pads as empty ([crop]({{< ref "crop" >}}) semantics, `wrap = false`), edge cells simply count fewer neighbors, no special-casing needed.
+{{< /callout >}}
+
 ## Syntax
 
 > `ring(row, col, [dimension = 1], [wrap = false])`
@@ -122,7 +126,7 @@ function update() {
 
 | Param       | Description                                                                   |
 |-------------|-------------------------------------------------------------------------------|
-| `row`       | Number: col number of the cell to be read [[0..height]]({{< ref "height" >}}) |
-| `col`       | Number: row number of the cell to be read [[0..width]]({{< ref "width" >}})   |
-| `dimension` | Number: ring dimension default is 1                                           |
+| `row`       | Number: row index of the center cell [[0..height]]({{< ref "height" >}})      |
+| `col`       | Number: column index of the center cell [[0..width]]({{< ref "width" >}})     |
+| `dimension` | Number: radius (≥ 0); the result is `(2·dimension + 1)²`. Default is 1        |
 | `wrap`      | Boolean: when `true`, indices wrap toroidally at borders; when `false` (default), out-of-bounds cells are taken as empty |

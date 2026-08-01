@@ -8,7 +8,7 @@ Returns a new quadrille trimmed to its minimal [span]({{< relref span >}}) of fi
 ## Example
 
 (press mouse or press keys to randomize chess pattern)  
-{{< p5-global-iframe quadrille="true" width="345" height="345" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 
 Quadrille.cellLength = 40;
@@ -47,7 +47,7 @@ function update() {
   hint = Quadrille.or(createQuadrille(8, 8), trimmed, span.row, span.col);
   hint.not(color(0, 180));
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js

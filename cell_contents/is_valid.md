@@ -3,7 +3,7 @@ weight: 2
 title: "isValid(row, col)"
 ---
 
-Checks if the specified cell coordinates `(row, col)` lie within quadrille bounds, i.e., returns `true` if `row` `∈` [[0..height]]({{< ref "height" >}}) and `col` `∈` [[0..width]]({{< ref "width" >}}), and `false` otherwise.
+Checks if the specified cell coordinates `(row, col)` lie within quadrille bounds, i.e., returns `true` if `row` `∈` [[0..height]]({{< ref "height" >}}) and `col` `∈` [[0..width]]({{< ref "width" >}}), and `false` otherwise. The bounds guard to lead with before any cell test — see the out-of-bounds note in [isEmpty]({{< ref "is_empty" >}}).
 
 {{< callout type="info" >}}  
 To check bounds individually, you can call `quadrille.isValid(row, 0)` to test only if `row` is within bounds, or `quadrille.isValid(0, col)` to test only if `col` is within bounds.  
