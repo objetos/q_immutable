@@ -42,9 +42,9 @@ function mousePressed() {
 
 function update() {
   pattern.clear().rand(1, r).rand(1, k).rand(1, N);
-  const span = pattern.span;
+  const bounds = pattern.span;
   const trimmed = pattern.trim().fill(1);
-  hint = Quadrille.or(createQuadrille(8, 8), trimmed, span.row, span.col);
+  hint = Quadrille.or(createQuadrille(8, 8), trimmed, bounds.row, bounds.col);
   hint.not(color(0, 180));
 }
 {{< /p5 >}}
@@ -82,9 +82,9 @@ function mousePressed() {
 
 function update() {
   pattern.clear().rand(1, r).rand(1, k).rand(1, N);
-  const span = pattern.span;
+  const bounds = pattern.span;
   const trimmed = pattern.trim().fill(1);
-  hint = Quadrille.or(createQuadrille(8, 8), trimmed, span.row, span.col);
+  hint = Quadrille.or(createQuadrille(8, 8), trimmed, bounds.row, bounds.col);
   hint.not(color(0, 180));
 }
 ```

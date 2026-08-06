@@ -30,7 +30,7 @@ These methods focus on determining the **value** and **type** of cells at a spec
 
 let ps; // Image variable
 let quadrille;
-let yellow, blue, red;
+let yellow, dodgerblue, tomato;
 let value; // Checkbox for display toggle
 
 async function setup() {
@@ -38,14 +38,14 @@ async function setup() {
   // Load image
   ps = await loadImage('/images/pola.jpg');
   yellow = color('yellow');
-  blue = color('blue');
-  red = color('red');
+  dodgerblue = color('dodgerblue');
+  tomato = color('tomato');
   // Quadrille containing cell functions and other content
   quadrille = createQuadrille([
     ['hi', 100, ps, pulse, 150n, { type:'Fiat', model:'500' }],
     [null, yellow, Symbol('id'), ':)'],
-    [[0, 1], blue, true, 255, '😼'],
-    [false, red, null, 185, '🐲', pulse]
+    [[0, 1], dodgerblue, true, 255, '😼'],
+    [false, tomato, null, 185, '🐲', pulse]
   ]);
   // Method to determine cell type
   quadrille.cellType = function (row, col) {
@@ -108,7 +108,7 @@ function pulse() {
 ```js
 let ps; // Image variable
 let quadrille;
-let yellow, blue, red;
+let yellow, dodgerblue, tomato;
 let value; // Checkbox for display toggle
 
 async function setup() {
@@ -116,14 +116,14 @@ async function setup() {
   // Load image
   ps = await loadImage('/images/pola.jpg');
   yellow = color('yellow');
-  blue = color('blue');
-  red = color('red');
+  dodgerblue = color('dodgerblue');
+  tomato = color('tomato');
   // Quadrille containing cell functions and other content
   quadrille = createQuadrille([
     ['hi', 100, ps, pulse, 150n, { type:'Fiat', model:'500' }],
     [null, yellow, Symbol('id'), ':)'],
-    [[0, 1], blue, true, 255, '😼'],
-    [false, red, null, 185, '🐲', pulse]
+    [[0, 1], dodgerblue, true, 255, '😼'],
+    [false, tomato, null, 185, '🐲', pulse]
   ]);
   // Method to determine cell type
   quadrille.cellType = function (row, col) {

@@ -12,7 +12,7 @@ Returns a new quadrille representing the **square block of cells** of radius `di
 'use strict';
 
 Quadrille.cellLength = 20;
-let quadrille, ring, hint;
+let quadrille, block, hint;
 let dimension = 1;
 let lime, olive, yellow, fuchsia;
 let wrap;
@@ -37,7 +37,7 @@ function draw() {
   drawQuadrille(quadrille, { outline: 'white', row: 0, col: 0 });
   drawQuadrille(hint, { outline: 'cyan', row: quadrille.mouseRow - dimension,
                         col: quadrille.mouseCol - dimension });
-  drawQuadrille(ring, { outline: 'cyan', row: 0, col: 11 });
+  drawQuadrille(block, { outline: 'cyan', row: 0, col: 11 });
   text('dimension ' + dimension, 210, 195);
 }
 
@@ -54,17 +54,17 @@ function keyPressed() {
 }
 
 function update() {
-  ring = quadrille.ring(quadrille.mouseRow,
-                        quadrille.mouseCol,
-                        dimension,
-                        wrap.checked());
+  block = quadrille.ring(quadrille.mouseRow,
+                         quadrille.mouseCol,
+                         dimension,
+                         wrap.checked());
 }
 {{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
 Quadrille.cellLength = 20;
-let quadrille, ring, hint;
+let quadrille, block, hint;
 let dimension = 1;
 let lime, olive, yellow, fuchsia;
 let wrap;
@@ -89,7 +89,7 @@ function draw() {
   drawQuadrille(quadrille, { outline: 'white', row: 0, col: 0 });
   drawQuadrille(hint, { outline: 'cyan', row: quadrille.mouseRow - dimension,
                         col: quadrille.mouseCol - dimension });
-  drawQuadrille(ring, { outline: 'cyan', row: 0, col: 11 });
+  drawQuadrille(block, { outline: 'cyan', row: 0, col: 11 });
   text('dimension ' + dimension, 210, 195);
 }
 
@@ -106,10 +106,10 @@ function keyPressed() {
 }
 
 function update() {
-  ring = quadrille.ring(quadrille.mouseRow,
-                        quadrille.mouseCol,
-                        dimension,
-                        wrap.checked());
+  block = quadrille.ring(quadrille.mouseRow,
+                         quadrille.mouseCol,
+                         dimension,
+                         wrap.checked());
 }
 ```
 {{% /details %}}

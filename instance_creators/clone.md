@@ -11,7 +11,7 @@ Returns a [shallow copy](https://en.wikipedia.org/wiki/Object_copying#Shallow_co
 {{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.cellLength = 50;
-let quadrille, clone;
+let quadrille, twin;
 let color1, color2;
 
 function setup() {
@@ -19,13 +19,13 @@ function setup() {
   color1 = color('lime');
   color2 = color('tomato');
   quadrille = createQuadrille(6, 6, 18, color1).rand(18, color2);
-  clone = quadrille.clone();
+  twin = quadrille.clone();
 }
 
 function draw() {
   background('darkkhaki');
   drawQuadrille(quadrille, { outline: 'white' });
-  drawQuadrille(clone, { outline: 'cyan', col: 7 });
+  drawQuadrille(twin, { outline: 'cyan', col: 7 });
 }
 
 function mouseClicked() {
@@ -36,7 +36,7 @@ function mouseClicked() {
 
 function keyPressed() {
   let color2Update = color(random(255), random(255), random(255));
-  clone.replace(color2, color2Update);
+  twin.replace(color2, color2Update);
   color2 = color2Update;
 }
 {{< /p5 >}}
@@ -44,7 +44,7 @@ function keyPressed() {
 {{% details title="code" open=true %}}
 ```js
 Quadrille.cellLength = 50;
-let quadrille, clone;
+let quadrille, twin;
 let color1, color2;
 
 function setup() {
@@ -52,13 +52,13 @@ function setup() {
   color1 = color('lime');
   color2 = color('tomato');
   quadrille = createQuadrille(6, 6, 18, color1).rand(18, color2);
-  clone = quadrille.clone();
+  twin = quadrille.clone();
 }
 
 function draw() {
   background('darkkhaki');
   drawQuadrille(quadrille, { outline: 'white' });
-  drawQuadrille(clone, { outline: 'cyan', col: 7 });
+  drawQuadrille(twin, { outline: 'cyan', col: 7 });
 }
 
 function mouseClicked() {
@@ -69,14 +69,14 @@ function mouseClicked() {
 
 function keyPressed() {
   let color2Update = color(random(255), random(255), random(255));
-  clone.replace(color2, color2Update);
+  twin.replace(color2, color2Update);
   color2 = color2Update;
 }
 ```
 {{% /details %}}
 
 {{< callout type="info" >}}
-**Shallow means cell values are shared references.** Clicking mutates the shared `color1` instance in place — both quadrilles change together, since their cells point at the same object. Pressing a key instead [replace]({{< ref "replace_value1_value2" >}})s `color2` in the **clone only** with a fresh instance — the original keeps the old one. Same identity story as [fill(value)]({{< ref "fill_value" >}}) and strict [search]({{< ref "search" >}}).
+**Shallow means cell values are shared references.** Clicking mutates the shared `color1` instance in place — both quadrilles change together, since their cells point at the same object. Pressing a key instead [replace]({{< ref "replace_value1_value2" >}})s `color2` in the **twin only** with a fresh instance — the original keeps the old one. Same identity story as [fill(value)]({{< ref "fill_value" >}}) and strict [search]({{< ref "search" >}}).
 {{< /callout >}}
 
 ## Syntax
