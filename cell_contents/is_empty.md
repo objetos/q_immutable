@@ -3,7 +3,7 @@ weight: 3
 title: "isEmpty(row, col)"
 ---
 
-Returns `true` if the cell found at `(row, col)` is empty and `false` otherwise. Empty means `== null` — which catches both `null` (the empty-cell value) **and** `undefined`. Since an out-of-bounds [read]({{< ref "read" >}}) returns `undefined`, **out-of-bounds positions count as empty too**. And since array input is normalized on entry — holes and explicit `undefined` become `null` — sparse arrays are welcome as quadrille sources; only [array views]({{< ref "drawing_arrays" >}}) alias your memory untouched.
+Returns `true` if the cell found at `(row, col)` is empty and `false` otherwise. Empty means `== null` — which catches both `null` (the empty-cell value) **and** `undefined`. Since an out-of-bounds [read]({{< ref "read" >}}) returns `undefined`, **out-of-bounds positions count as empty too**. And since array input is normalized on entry — holes and explicit `undefined` become `null` — sparse arrays are welcome as quadrille sources; only [array views]({{< ref "/docs/api/p5_functions/draw_quadrille/drawing_arrays" >}}) alias your memory untouched.
 
 {{< callout type="warning" >}}
 **Guard order matters in traversals.** Because out-of-bounds counts as empty, a BFS/DFS neighbor test of `isEmpty(r, c)` alone happily walks off the board. Lead with [isValid]({{< ref "is_valid" >}}): `isValid(r, c) && isEmpty(r, c)` — the pattern the built-in [reach]({{< ref "reach" >}}) and [path]({{< ref "path" >}}) queries follow.

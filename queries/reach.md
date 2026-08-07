@@ -6,6 +6,12 @@ title: "reach(row, col, directions)"
 
 Returns the seed cell's reach as a **number-field quadrille** — `0` at the seed, steps-to-reach elsewhere, and empty where out of reach — computed as a [breadth-first](https://en.wikipedia.org/wiki/Breadth-first_search) wavefront over any quadrille: filled cells are obstacles, empty cells are passable. The field renders as gray levels for free, and one field serves any number of agents: compute it from the *target* and every agent descends it. Seeding on a filled or invalid cell yields a fully empty field — an agent cannot stand in a wall.
 
+{{< callout type="info" >}}
+The wavefront has a name and a paper. `reach` is the expansion half of [Lee's algorithm](https://en.wikipedia.org/wiki/Lee_algorithm), published in 1961 for routing wires on circuit boards; [path]({{< ref "path" >}}) is its backtrace half. It is exact for unit step cost, which is all a grid of passable and impassable cells has. [Dijkstra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) generalizes it to weighted edges and [A*](https://en.wikipedia.org/wiki/A*_search_algorithm) prunes it toward a single target with a heuristic — both give up the property that makes this call worth having, which is that the field answers **every** target at once.
+
+Lee, C. Y. (1961). *An Algorithm for Path Connections and Its Applications.* IRE Transactions on Electronic Computers **EC-10**(3), 346–365.
+{{< /callout >}}
+
 ## Example
 
 (move the mouse to seed the field; click to regenerate the maze)\

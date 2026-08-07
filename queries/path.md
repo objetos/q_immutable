@@ -6,6 +6,12 @@ title: "path(row1, col1, row2, col2, directions)"
 
 Returns a [shortest path](https://en.wikipedia.org/wiki/Shortest_path_problem) between two cells as an array of `{row, col}` steps — excluding start, including end (the moves, not the position) — following the [search]({{< ref "search" >}}) return convention. Sugar over [reach]({{< ref "reach" >}}) plus [greedy](https://en.wikipedia.org/wiki/Greedy_algorithm) descent: from the target, step to any neighbor one ring closer; the wavefront invariant guarantees such a neighbor exists. Failure is uniform: unreachable target, filled endpoint (either one), off-board endpoint, and `start === end` all yield an empty array.
 
+{{< callout type="info" >}}
+This is the backtrace half of [Lee's algorithm](https://en.wikipedia.org/wiki/Lee_algorithm) — [reach]({{< ref "reach" >}}) expands the wave, `path` walks back down the stamps. Because the invariant guarantees a lower neighbor at every step, there is no failure branch in the descent and no priority queue anywhere: the emptiness of the returned array is the only error channel.
+
+Ties break in a fixed neighbor order, so the result is *a* shortest path, not *the* shortest path — equal-length routes are equally correct, and the one you get is stable for a given board. [A*](https://en.wikipedia.org/wiki/A*_search_algorithm) would visit fewer cells for a single query; reach-then-descend is the deliberate trade, since the field is reusable across targets and agents.
+{{< /callout >}}
+
 ## Example
 
 (move the mouse to lead the 🐭; click to regenerate the maze)\
