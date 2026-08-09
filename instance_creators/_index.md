@@ -12,3 +12,4 @@ _Instance accessors_ generate new `quadrille` instances derived from the origina
 - **[crop(row, col, width, height, wrap)]({{< ref "crop" >}}):** Creates a new quadrille representing the rectangular region anchored at `(row, col)` with the given `width` and `height`.
 - **[ring(row, col, dimension, wrap)]({{< ref "ring" >}}):** Creates a new quadrille representing the square block of radius `dimension` centered at `(row, col)` — center cell included.  
 - **[trim()]({{< ref "trim" >}}):** Creates a new quadrille containing the minimal [span]({{< relref "span" >}}) of its filled cells.  
+- **[heatMap(hot, cold)]({{< ref "heat_map" >}}):** Creates a new quadrille of colors ramped by this one's numbers — `hot` at `0`, `cold` at the largest number present.  
