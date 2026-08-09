@@ -91,6 +91,10 @@ The wavefront brightens toward the seed (`0` renders lightest under this `number
 {{< /callout >}}
 
 {{< callout type="info" >}}
+The override above is one line as a *derivation*: [heatMap(hot, cold)]({{< relref "/docs/api/accessors/instance_creators/heat_map" >}}) returns the field as a color quadrille, ramped by its own maximum, which then draws with no display param at all. Keep the override when the ramp is doing something a scale cannot — gating on a scalar, say, as the wavefront animation in [Layered Boards]({{< relref "/docs/strategies/layered_boards" >}}) does.
+{{< /callout >}}
+
+{{< callout type="info" >}}
 `reach` is defined and meaningful on **any** quadrille, not only mazes: on a game board it is pathfinding distance around the pieces; on an empty quadrille it is plain grid distance. Its natural companion is [path]({{< ref "path" >}}), which descends the field.
 {{< /callout >}}
 
