@@ -91,7 +91,7 @@ The wavefront brightens toward the seed (`0` renders lightest under this `number
 {{< /callout >}}
 
 {{< callout type="info" >}}
-The override above is one line as a *derivation*: [heatMap(hot, cold)]({{< relref "/docs/api/accessors/instance_creators/heat_map" >}}) returns the field as a color quadrille, ramped by its own maximum, which then draws with no display param at all. Keep the override when the ramp is doing something a scale cannot — gating on a scalar, say, as the wavefront animation in [Layered Boards]({{< relref "/docs/mechanics/layered_boards" >}}) does.
+The override above is one line as a *derivation*: [heatMap(hot, cold)]({{< relref "/docs/api/accessors/instance_creators/heat_map" >}}) returns the field as a color quadrille, ramped by its own maximum, which then draws with no display param at all. Keep the override when the ramp is doing something a scale cannot — gating on a scalar, say, as the wavefront animation in [Walk]({{< relref "/docs/mechanics/walk" >}}) does.
 {{< /callout >}}
 
 {{< callout type="info" >}}
